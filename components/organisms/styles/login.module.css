@@ -31,10 +31,20 @@
   align-items: center !important;
   margin-bottom: 1rem;
   border-radius: 12px;
-  width: 400px;
+  width: 300px;
   background-color: var(--color-2) !important;
   border: 1px solid var(--color-2) !important;
   border-radius: 6px;
+}
+.iconUser {
+  display: flex;
+  height: 0.01em;
+  max-height: 2em;
+  -webkit-box-align: center;
+  align-items: center;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 8px;
 }
 .form_input:hover,
 .form_input:focus {
@@ -73,6 +83,7 @@
 .option a:hover {
   text-decoration: underline;
 }
+
 @media (min-width: 765px) {
   .section {
     height: 100vh;

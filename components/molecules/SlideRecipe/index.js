@@ -5,44 +5,32 @@ import style from "./style.module.css"
 
 function index () {
     return (
-        <section className={style.slide}>
+        <div className={style.section}>
             <div className="container">
                 <div className="Row">
                     <div className="col">
-                        <h1 className="heading">New Recipes</h1>
+                        <h4 className="heading">New Recipes</h4>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-4">
-                        <div className="card-service">
-                            <div className="detail">
-                                <p className="label">Banana Lemonilo</p>
+                    <div className="col-lg-12 d-flex justify-content-center">
+                        <Link href="/detail">
+                            <div>
+                                <p className={style.label}>Banana Lemonilo</p>
                             </div>
-                            <div className="img-service">
+                        </Link>
+                            <div className={style.img}>
                                 <Image 
                                     src="/img/picture1.png" 
-                                    alt="picture" 
-                                    width="150px" 
-                                    height="250px" 
-                                />
-                                <Image 
-                                    src="/img/picture1.png" 
-                                    alt="picture" 
-                                    width="150px" 
-                                    height="250px" 
-                                />
-                                <Image 
-                                    src="/img/picture1.png" 
-                                    alt="picture" 
-                                    width="150px" 
-                                    height="250px" 
+                                    alt="picture"
+                                    height={270}
+                                    width={250} 
                                 />
                             </div>
-                        </div>
+                            
                     </div>
                 </div>
+        
             </div>
-        </section>
+        </div>
     )
 }
 

@@ -1,9 +1,10 @@
 @import url("bootstrap/dist/css/bootstrap.min.css");
 @import "@fontsource/poppins";
 @import "@fontsource/inter";
+@import "font-awesome/css/font-awesome.min.css";
 
 :root {
-  --mainColor: #ffffff;
+  --mainColor: #fcfcfc;
   --secondColor: #efc81a;
   --color-1: #faf7ed;
   --color-2: #a09b9b;
@@ -18,7 +19,7 @@ body {
   overflow-x: hidden;
   background-color: var(--main-color);
   min-height: 100vh;
-  display: contents;
+  display: flex;
   justify-content: center;
   align-items: center;
 }

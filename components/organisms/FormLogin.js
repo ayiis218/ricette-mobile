@@ -1,10 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import style from "./styles/login.module.css"
+import style from "./styles/login.module.css";
+import {AccountCircle} from '@mui/icons-material/AccountCircle';
+import {InputAdornment} from '@mui/material/InputAdornment';
 
 import InputText from "../atoms/InputText"
 import Button from "../atoms/Button"
+/* import {Icon} from "semantic-ui-react"
+import { FiUser } from "react-icons/fi";
+import { CgLock } from "react-icons/cg"; */
 
 const FormLogin = (props) => {
     return (
@@ -31,21 +36,28 @@ const FormLogin = (props) => {
                                         type="email"
                                         value={props.valueEmail}
                                         onChange={props.onChange}
-                                    />
+                                        id="input-with-icon-textfield"
+                                        InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                            <AccountCircle />
+                                            </InputAdornment>
+                                        ),
+                                        }}
+                                        variant="standard"
+                                    />                                    
                                 </div>
                                 <div className={`form-group position-relative ${style.form_input}`}>
                                     <InputText
-                                        placeholder="Enter password"
+                                        className="fa-thin fa-user"
+                                        placeholder="&#xf023;Password"
                                         name="password"
                                         type="password"
                                         value={props.valuePassword}
                                         onChange={props.onChange}
+                                        iconPosition='left'
                                     />
                                 </div>
-
-                                {/* <div className={props.classForgot}>
-                                    <Link href="/auth/forgot">Forgot Password?</Link>
-                                </div> */}
                                 <Button
                                     className={`btn w-100 mt-3 ${style.button}`}
                                 > LOG IN
@@ -54,7 +66,7 @@ const FormLogin = (props) => {
                             <div className="w-100 d-flex flex-column">
                                 <div className="w-100 d-flex justify-content-center align-items-center">
                                     <div div className={style.option}>
-                                        Don&apos;t have an account?{' '}
+                                        Don&apos;t have an account?
                                         <Link href="/auth/register">Sign up</Link>
                                     </div>
                                 </div>
