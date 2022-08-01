@@ -18,14 +18,14 @@
   text-align: center;
   color: var(--secondColor);
   font-size: 5px !important;
+  margin-top: 10px;
   font-weight: 400;
 }
-
 .subtitle {
   text-align: center;
   color: var(--color-2);
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 17px;
+  font-weight: 100;
 }
 .form_input {
   align-items: center !important;

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import style from "./styles/login.module.css"
+import style from "./styles/forget.module.css"
 
 import InputText from "../atoms/InputText"
 import Button from "../atoms/Button"
@@ -21,44 +21,23 @@ const FormLogin = (props) => {
                     </div>
                     <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
                         <div className={style.right}>
-                            <h5 className={style.title}>Welcome</h5>
-                            <p className={style.subtitle}>Log in to your exiting account.</p>
+                            <h5 className={style.title}>Forgot Password?</h5>
+                            <p className={style.subtitle}>send your email to password reset</p>
                             <form>
                                 <div className={style.form_input}>
                                     <InputText
-                                        placeholder="Enter email address"
+                                        placeholder="examplexxx@gmail.com"
                                         name="email"
                                         type="email"
                                         value={props.valueEmail}
                                         onChange={props.onChange}
                                     />
                                 </div>
-                                <div className={`form-group position-relative ${style.form_input}`}>
-                                    <InputText
-                                        placeholder="Enter password"
-                                        name="password"
-                                        type="password"
-                                        value={props.valuePassword}
-                                        onChange={props.onChange}
-                                    />
-                                </div>
-
-                                {/* <div className={props.classForgot}>
-                                    <Link href="/auth/forgot">Forgot Password?</Link>
-                                </div> */}
                                 <Button
                                     className={`btn w-100 mt-3 ${style.button}`}
-                                > LOG IN
+                                > Reset Password
                                 </Button>
                             </form>
-                            <div className="w-100 d-flex flex-column">
-                                <div className="w-100 d-flex justify-content-center align-items-center">
-                                    <div div className={style.option}>
-                                        Don&apos;t have an account?{' '}
-                                        <Link href="/auth/register">Sign up</Link>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
