@@ -1,3 +1,45 @@
-.poular {
-  background-color: aquamarine;
+.section {
+  background-color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  height: 520px;
+  width: 480px;
+  overflow: hidden;
+}
+.section h1 {
+  position: absolute;
+  width: 320px;
+  margin-left: 40px;
+  margin-top: 15px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: var(--color-3);
+}
+.section p {
+  position: absolute;
+  width: 300px;
+  height: 37px;
+  margin-left: 143px;
+  margin-top: 71px;
+  font-size: 23px;
+  font-weight: 600;
+}
+.label {
+  position: absolute;
+  color: var(--color-3);
+  z-index: 1;
+}
+.img {
+  position: absolute;
+  margin-left: 25px;
+  margin-top: 65px;
+  border-radius: 15px;
+}
+
+@media (min-width: 765px) {
+  .section {
+    overflow: hidden;
+  }
 }

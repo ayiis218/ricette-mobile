@@ -7,28 +7,26 @@ function index () {
     return (
         <div className={style.section}>
             <div className="container">
-                <div className="Row">
+                <div className="row">
                     <div className="col">
-                        <h4 className="heading">New Recipes</h4>
+                        <h1 className="heading">New Recipes</h1>
                     </div>
-                    <div className="col-lg-12 d-flex justify-content-center">
+                    <div className="col-md-12 col-lg-12">
                         <Link href="/detail">
-                            <div>
-                                <p className={style.label}>Banana Lemonilo</p>
-                            </div>
+                        <div>
+                            <p className={style.label}>Banana Lemonilo</p>
+                        </div>
                         </Link>
-                            <div className={style.img}>
-                                <Image 
-                                    src="/img/picture1.png" 
-                                    alt="picture"
-                                    height={270}
-                                    width={250} 
-                                />
-                            </div>
-                            
+                        <div className={style.img}>
+                            <Image 
+                                src="/img/picture1.png" 
+                                alt="picture"
+                                height={220}
+                                width={190} 
+                            />
+                        </div>
                     </div>
                 </div>
-        
             </div>
         </div>
     )

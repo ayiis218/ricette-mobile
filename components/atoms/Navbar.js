@@ -3,40 +3,38 @@ import Image from 'next/image'
 
 function navbar () {
     return (
-        <div>
-            <nav class="navbar bg-light">
-                <div class="container">
-                    <Link href="" class="navbar-brand" >
+            <nav className="navbar justify-content-center navbar-dark bg-light fixed-bottom">
+                <div className="container">
+                    <Link href="/" className="navbar-brand" >
                         <Image 
                             src="/icons/home.svg" 
                             alt="" 
-                            width="30" 
-                            height="24" />
+                            width={40} 
+                            height={70} />
                     </Link>
-                    <Link href="" class="navbar-brand" >
+                    <Link href="/create" className="navbar-brand" >
                         <Image 
                             src="/icons/plus-square.svg" 
                             alt="" 
-                            width="30" 
-                            height="24" />
+                            width={40} 
+                            height={70} />
                     </Link>
-                    <Link href="" class="navbar-brand" >
+                    <Link href="/chat" className="navbar-brand" >
                         <Image 
                             src="/icons/message-circle.svg" 
                             alt="" 
-                            width="30" 
-                            height="24" />
+                            width={40} 
+                            height={70} />
                     </Link>
-                    <Link href="" class="navbar-brand" >
+                    <Link href="/profile" className="navbar-brand" >
                         <Image 
                             src="/icons/user.svg" 
                             alt="" 
-                            width="30" 
-                            height="24" />
+                            width={40} 
+                            height={70} />
                     </Link>
                 </div>
             </nav>
-        </div>
     )
 }
 

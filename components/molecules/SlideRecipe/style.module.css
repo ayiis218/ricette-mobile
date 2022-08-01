@@ -1,73 +1,42 @@
 .section {
-  background-color: var(--color-4);
-  height: 55vh;
+  background-color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  height: 265px;
   width: 480px;
-  border: solid var(--color-4);
-  overflow: hidden;
-}
-.label {
-  text-align: center;
-  color: var(--color-1);
-  z-index: 10;
-}
-.section h4 {
-  position: absolute;
-  width: 111px;
-  height: 23px;
-  left: 28px;
-  top: 151px;
-
-  font-family: "Airbnb Cereal App";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23px;
-
-  color: #3f3a3a;
 }
 .section p {
   position: absolute;
   width: 61px;
   height: 36px;
-  left: 48px;
-  top: 298px;
+  margin-left: 43px;
+  margin-top: 195px;
+}
+.label {
+  position: absolute;
+  color: var(--color-1);
+  z-index: 1;
+}
+.section h1 {
+  position: absolute;
+  width: 320px;
+  margin-left: 40px;
+  margin-top: 15px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: var(--color-3);
 }
 .img {
   position: absolute;
-  width: 150px;
-  height: 170px;
-  left: 28px;
-  top: 194px;
-
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+  margin-left: 15px;
+  margin-top: 60px;
   border-radius: 15px;
 }
-.a:hover {
-  text-decoration: underline;
-}
+
 @media (min-width: 765px) {
   .section {
-    height: 50vh;
-  }
-  .img {
-    position: absolute;
-    left: 450px;
-    top: 154px;
-    border-radius: 15px;
-    object-fit: cover;
-    object-position: center;
-  }
-  .label {
-    text-align: center;
-    color: var(--color-1);
-    z-index: 10;
-  }
-
-  .section p {
-    position: flex;
-    width: 61px;
-    height: 36px;
-    left: 465px;
-    top: 254px;
+    overflow: hidden;
   }
 }
