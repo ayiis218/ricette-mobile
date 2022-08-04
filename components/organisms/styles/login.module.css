@@ -8,9 +8,7 @@
 .section p {
   text-align: center;
 }
-.left {
-  margin-top: 15px;
-}
+.left,
 .right {
   margin-top: 15px;
 }

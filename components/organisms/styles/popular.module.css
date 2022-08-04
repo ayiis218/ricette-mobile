@@ -1,0 +1,22 @@
+.popularRecipe {
+  height: 1024px;
+  width: 480px;
+}
+.popularRecipe h6 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #666666;
+}
+
+.popularRecipe p,
+.popularRecipe span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height */
+
+  color: #b6b6b6;
+}

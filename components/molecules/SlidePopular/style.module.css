@@ -8,38 +8,47 @@
 .section h1 {
   position: absolute;
   width: 320px;
-  margin-left: 40px;
+  margin-left: 35px !important;
   margin-top: 15px;
 
   font-style: normal;
   font-weight: 700;
   font-size: 25px;
   line-height: 30px;
-  color: var(--color-3);
+  color: var(--color-5);
 }
 .section p {
   position: absolute;
   width: 300px;
-  height: 37px;
-  margin-left: 143px;
-  margin-top: 71px;
-  font-size: 23px;
+  height: 35px;
+  margin-left: 137px !important;
+  margin-top: 70px;
+  font-size: 20px;
   font-weight: 600;
 }
 .label {
   position: absolute;
-  color: var(--color-3);
+  color: var(--color-5);
   z-index: 1;
 }
 .img {
   position: absolute;
-  margin-left: 25px;
+  margin-left: 20px !important;
   margin-top: 65px;
   border-radius: 15px;
 }
 
-@media (min-width: 765px) {
+@media (min-width: 768px) {
   .section {
     overflow: hidden;
   }
+}
+.section p {
+  margin-left: 120px !important;
+}
+.section h1 {
+  margin-left: 20px !important;
+}
+.img {
+  margin-left: 0 !important;
 }

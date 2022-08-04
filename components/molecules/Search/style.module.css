@@ -1,28 +1,66 @@
-.section {
+.search {
   background-color: var(--mainColor);
   border: 1px solid var(--mainColor);
-  height: 120px;
   width: 480px;
-  overflow: hidden;
 }
-.input {
-  position: absolute;
-  width: 380px;
+.section {
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 78vh;
   margin-top: 20px;
-  margin-right: 40px;
-  margin-left: 40px;
-
-  background-color: var(--color-2);
-  border: 1px solid var(--color-2);
-  border-radius: 8px;
+  background-color: var(--color-1) !important;
+  border-radius: 200px;
 }
-.input:hover,
-.input:focus {
-  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11) !important;
-  border: 3px solid var(--secondColor);
+
+.section div {
+  border-radius: 200px !important;
+}
+
+.section span {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 20px;
+}
+
+.section input {
+  border: none !important;
+  background-color: var(--color-1) !important;
+  border-radius: 200px !important;
+  margin: 4px;
 }
 @media (min-width: 765px) {
   .section {
     overflow: hidden;
+  }
+
+  .search {
+    background-color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+    width: 480px;
+  }
+  .section {
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 60vh;
+    margin-top: 20px;
+    background-color: var(--color-1) !important;
+    border-radius: 200px;
+  }
+
+  .section div {
+    border-radius: 200px !important;
+  }
+
+  .section span {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 20px;
+  }
+
+  .section input {
+    border: none !important;
+    background-color: var(--color-1) !important;
+    border-radius: 200px !important;
+    margin: 4px;
   }
 }
