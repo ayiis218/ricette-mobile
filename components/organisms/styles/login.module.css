@@ -5,6 +5,12 @@
   width: 480px;
   overflow: hidden;
 }
+.section h4 {
+  text-align: center;
+  color: var(--secondColor);
+  font-weight: 600;
+  font-size: 2rem !important;
+}
 .section p {
   text-align: center;
 }
@@ -18,49 +24,41 @@
   font-weight: 600;
   font-size: 2rem !important;
 }
-
 .subtitle {
   text-align: center;
   color: var(--color-2);
   font-size: 18px;
   font-weight: 400;
 }
-.form_input {
-  align-items: center !important;
-  margin-bottom: 1rem;
-  border-radius: 12px;
-  width: 300px;
-  background-color: var(--color-2) !important;
-  border: 1px solid var(--color-2) !important;
-  border-radius: 6px;
+.section span {
+  background-color: var(--color-1) !important;
+  border: none !important;
+  border-radius: 20px;
+  width: 390px;
 }
-.iconUser {
-  display: flex;
-  height: 0.01em;
-  max-height: 2em;
-  -webkit-box-align: center;
-  align-items: center;
-  white-space: nowrap;
-  color: rgba(0, 0, 0, 0.54);
-  margin-right: 8px;
+.section input {
+  border: none !important;
+  background-color: var(--color-1) !important;
+  border-radius: 200px !important;
+  margin: 0;
 }
-.form_input:hover,
-.form_input:focus {
+.section span:hover,
+.section span:focus {
   box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11) !important;
   border: 3px solid var(--secondColor) !important;
 }
 .button {
   border: 1;
-  box-shadow: none;
-  border-radius: 6px;
+  border-radius: 15px;
   background-color: var(--secondColor);
   color: var(--mainColor);
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  height: 50px;
   border-color: var(--secondColor);
 }
 .button:hover {
   background-color: var(--mainColor);
+  color: var(--secondColor);
   border-color: var(--secondColor);
 }
 .clicked:hover {

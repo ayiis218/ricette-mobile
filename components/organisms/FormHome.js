@@ -1,27 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import style from './styles/home.module.css';
 
-import Search from '../molecules/Search';
+/* import Search from '../molecules/Search';
 import Slider from '../molecules/SlideRecipe';
 import Popular from '../molecules/SlidePopular';
 import NavBar from '../atoms/Navbar';
-import axios from 'axios';
+import axios from 'axios'; */
 
-export async function getStaticProps(context) {
-  const response = await axios({
-    method: 'GET',
-    url: `localhost:8120/recipe`,
-  });
-  return {
-    props: {
-      data: response.data.data,
-    },
-    revalidate: 15,
-  };
-}
+const FormHome = (props) => {
+  /*   const router = useRouter();
+  const [recipe, setRecipe] = useState(props.recipe);
 
-const FormHome = ({ data }) => {
-  // const { latesRecipe } = useSelector((state) => state)
+  useEffect(() => {
+    recipe;
+  }, [recipe]);
+
+  const handleSubmit = () => {
+    router.push('/recipe/detail');
+  }; */
+
+  // const img = recipe.recipe.images ?
   return (
     <div className={style.home}>
       <div className="container">
@@ -30,10 +29,10 @@ const FormHome = ({ data }) => {
             <Search />
           </div>
           <div className="col-md-12 col-lg-12 d-flex justify-content-center">
-            <Slider data={data} />
+            <Slider data={props} />
           </div>
           <div className="col-md-12 col-lg-12 d-flex justify-content-center">
-            <Popular data={data} />
+            <Popular data={props} />
           </div>
           <div className="col-md-12 col-lg-12 d-flex justify-content-center">
             <NavBar />

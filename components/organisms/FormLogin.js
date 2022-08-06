@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 import style from './styles/login.module.css';
 
 import InputText from '../atoms/InputText';
 import Button from '../atoms/Button';
+
 import { FiUser } from 'react-icons/fi';
 import { FiLock } from 'react-icons/fi';
 
 const FormLogin = (props) => {
+  // const dispatch = useDispatch();
+  const router = useRouter();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleLogin = () => {
+    axios
+      .post('http://localhost:8120/login', { email, password })
+      .then((response) => {
+        router.replace('/');
+      })
+      .catch(({ response }) => {
+        const message = response?.data?.message;
+        setError({ errorMsg: message });
+      });
+  };
   return (
     <div className={style.section}>
       <div className="container">
@@ -27,42 +49,49 @@ const FormLogin = (props) => {
           </div>
           <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
             <div className={style.right}>
-              <h4 className={style.title}>Welcome</h4>
-              <p className={style.subtitle}>Log in to your exiting account.</p>
-              <form>
-                <div className={style.form_input}>
-                  {/* <span className="input-group-text test" id="basic-addon1">
-                    <FiUser />
-                  </span> */}
-                  <InputText
-                    className="form-control"
-                    placeholder="Enter email address"
-                    name="email"
-                    type="email"
-                    value={props.valueEmail}
-                    onChange={props.onChange}
-                    aria-describedby="basic-addon1"
-                  />
+              <h4>Welcome</h4>
+              <p>Log in to your exiting account.</p>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleLogin();
+                }}
+              >
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <FiUser color="var(--color-3)" size={30} />
+                    <InputText
+                      type="text"
+                      className="form-control"
+                      placeholder="examplexxx@gmail.com"
+                      style={{ color: 'var(--color-3)' }}
+                    />
+                  </span>
                 </div>
-                <div
-                  className={`form-group position-relative ${style.form_input}`}
-                >
-                  {/* <span className="input-group-text test" id="basic-addon1">
-                    <FiLock />
-                  </span> */}
-                  <InputText
-                    className="form-control"
-                    placeholder="Password"
-                    name="password"
-                    type="password"
-                    value={props.valuePassword}
-                    onChange={props.onChange}
-                    aria-describedby="basic-addon1"
-                  />
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <FiLock color="var(--color-3)" size={30} />
+                    <InputText
+                      type="password"
+                      className="form-control"
+                      placeholder="Password"
+                      style={{ color: 'var(--color-3)' }}
+                    />
+                  </span>
                 </div>
-                <Button className={`btn w-100 mt-3 ${style.button}`}>
-                  LOG IN
-                </Button>
+                {/* <div className={props.classForgot}>
+                                        <Link href="/auth/forgot">Forgot Password?</Link>
+                                    </div> */}
+                <div className="row">
+                  <div className="col d-flex justify-content-center">
+                    <Button
+                      className={`btn w-100 mt-3 ${style.button}`}
+                      type="submit"
+                    >
+                      POST
+                    </Button>
+                  </div>
+                </div>
               </form>
               <div className="w-100 d-flex flex-column">
                 <div className="w-100 d-flex justify-content-center align-items-center">

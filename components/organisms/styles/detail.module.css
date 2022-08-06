@@ -1,0 +1,111 @@
+.section {
+  background-color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  height: 1020px;
+  width: 480px;
+  overflow: hidden;
+}
+.hero {
+  position: relative;
+  width: 480px;
+}
+.iconBack {
+  position: absolute;
+  margin: 1.5rem;
+  z-index: 1;
+}
+.img {
+  height: 50vh;
+  width: 480px;
+  background-color: black;
+  color: var(--mainColor);
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3rem;
+  padding-left: 2.5rem;
+  padding-right: 1.5rem;
+}
+.img p {
+  color: var(--color-2) !important;
+}
+.img h3 {
+  z-index: 2px;
+  font-size: 39px;
+}
+.buttonControl {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+.save {
+  background-color: var(--secondColor) !important;
+  color: var(--color-1);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  margin-left: 1rem;
+  border-radius: 1rem;
+}
+.like {
+  background-color: var(--color-1) !important;
+  color: var(--secondColor);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  margin-left: 1rem;
+  border-radius: 1rem;
+}
+.save:hover,
+.like:hover {
+  color: var(--color-5) !important;
+  border: 2px !important;
+}
+.content {
+  position: absolute;
+  top: 95%;
+  width: 480px;
+  height: 100vh;
+  background-color: var(--mainColor);
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 1.5rem;
+}
+.label {
+  position: absolute;
+  z-index: 1px;
+}
+.pict {
+  position: absolute;
+}
+.buttonControl {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+.tab {
+  border: 0;
+  background-color: var(--mainColor) !important;
+}
+.tab:active {
+  background-color: transparent !important;
+}
+.playContainer {
+  background-color: var(--color-1);
+  padding: 12px;
+  border-radius: 1rem;
+}
+.buttonPlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--secondColor);
+  border-radius: 1rem;
+}
+
+@media (min-width: 765px) {
+}

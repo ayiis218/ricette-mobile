@@ -1,86 +1,113 @@
-import React from "react";
-import style from "./styles/register.module.css"
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import style from './styles/register.module.css';
 
-// import Image from "next/image";
-import InputText from "../atoms/InputText"
-import Button from "../atoms/Button"
+import InputText from '../atoms/InputText';
+import Button from '../atoms/Button';
+
+import { FiUser } from 'react-icons/fi';
+import { AiOutlineMail, AiOutlineLock, AiOutlineUnlock } from 'react-icons/ai';
+import { IoCallOutline } from 'react-icons/io5';
 
 const FormRegister = (props) => {
-    return (
-        <div className={style.section}>
-            <div className="container" >
-                <div className="row">
-                    <div className="col-md-6 d-flex justify-content-center">
-                        {/* <div className={style.left}>
-                            <div className={style.title}>
-                                <Image src="/img/user.png" width={200} height={200} alt="user" />
-                            </div>
-                            
-                        </div> */}
+  const router = useRouter();
+  const handleLogin = () => {
+    router.replace('/auth/login');
+  };
+  return (
+    <div className={style.section}>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 col-lg-12 m-0 d-flex justify-content-center">
+            <div className={style.right}>
+              <h4>Let's Get Started !</h4>
+              <p>Create new account to access all features.</p>
+              <div className="d-flex align-items-center d-flex m-5">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleLogin();
+                  }}
+                >
+                  <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">
+                      <FiUser color="var(--color-3)" size={30} />
+                      <InputText
+                        type="text"
+                        className="form-control"
+                        placeholder="Name"
+                        style={{ color: 'var(--color-3)' }}
+                      />
+                    </span>
+                  </div>
+                  <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">
+                      <AiOutlineMail color="var(--color-3)" size={30} />
+                      <InputText
+                        type="text"
+                        className="form-control"
+                        placeholder="E-Mail"
+                        style={{ color: 'var(--color-3)' }}
+                      />
+                    </span>
+                  </div>
+                  <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">
+                      <IoCallOutline color="var(--color-3)" size={30} />
+                      <InputText
+                        type="text"
+                        className="form-control"
+                        placeholder="Phone Number"
+                        style={{ color: 'var(--color-3)' }}
+                      />
+                    </span>
+                  </div>
+                  <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">
+                      <AiOutlineLock color="var(--color-3)" size={30} />
+                      <InputText
+                        type="password"
+                        className="form-control"
+                        placeholder="Create New Password"
+                        style={{ color: 'var(--color-3)' }}
+                      />
+                    </span>
+                  </div>
+                  <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">
+                      <AiOutlineUnlock color="var(--color-3)" size={30} />
+                      <InputText
+                        type="password"
+                        className="form-control"
+                        placeholder="New Password"
+                        style={{ color: 'var(--color-3)' }}
+                      />
+                    </span>
+                  </div>
+                  <div className="row">
+                    <div className="col d-flex justify-content-center">
+                      <Button
+                        className={`btn w-100 mt-3 ${style.button}`}
+                        type="submit"
+                      >
+                        CREATE
+                      </Button>
                     </div>
-                    <div className="col-md-6 col-lg-12 m-0 d-flex justify-content-center">
-                        <div className={style.right}>
-                            <h4 className={style.title}>Let's Get Started !</h4>
-                            <p className={style.subtitle}>Create new account to access all features.</p>
-                            <div className="d-flex align-items-center d-flex m-5">
-                                <form>
-                                    <div className={style.form_input}>
-                                        <InputText
-                                            placeholder="Name"
-                                            name="name"
-                                            type="text"
-                                        />
-                                    </div>
-                                    <div className={style.form_input}>
-                                        <InputText
-                                            placeholder="E-Mail"
-                                            name="email"
-                                            type="email"
-                                        />
-                                    </div>
-                                    <div className={style.form_input}>
-                                        <InputText
-                                            placeholder="Phone Number"
-                                            name="pone"
-                                            type="phone"
-                                        />
-                                    </div>
-                                    <div className={style.form_input}>
-                                        <InputText
-                                            placeholder="Create New password"
-                                            name="password"
-                                            type="password"
-                                        />
-                                    </div>
-                                    <div className={`input-text ${style.form_input}`}>
-                                        <InputText
-                                            placeholder="New Password"
-                                            name="rePassword"
-                                            type="password"
-                                        />
-                                    </div>
-
-                                    {/* <div className={props.classForgot}>
-                                        <Link href="/auth/forgot">Forgot Password?</Link>
-                                    </div> */}
-                                    <Button
-                                        className={`btn w-100 mt-3 ${style.button}`}
-                                    > CREATE
-                                    </Button>
-                                    <div div className={style.option}>
-                                        Don&apos;t have an account?{' '}
-                                        <Link href="/auth/login">Log in Here</Link>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  </div>
+                  <div div className={style.option}>
+                    Don&apos;t have an account?{' '}
+                    <Link href="/auth/login">Log in Here</Link>
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default FormRegister
+export default FormRegister;

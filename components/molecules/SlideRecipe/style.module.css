@@ -4,14 +4,14 @@
   height: 265px;
   width: 480px;
 }
-.section p {
+.image h5 {
   position: absolute;
-  width: 61px;
-  height: 36px;
-  margin-left: 43px;
-  margin-top: 195px;
+  width: 90px;
+  height: 50px;
+  margin-top: 171px;
 }
 .label {
+  margin-left: 5px !important;
   position: absolute;
   color: var(--color-1);
   z-index: 1;
@@ -28,11 +28,16 @@
   line-height: 30px;
   color: var(--color-5);
 }
-.img {
-  position: absolute;
+.image img {
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.card {
+  border-radius: 15px !important;
+  padding: 0;
   margin-left: 15px;
   margin-top: 60px;
-  border-radius: 15px;
+  background-color: var(--mainColor);
 }
 
 @media (min-width: 765px) {

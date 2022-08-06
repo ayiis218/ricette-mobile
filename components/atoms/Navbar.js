@@ -8,10 +8,10 @@ function navbar() {
       <nav
         className={`${style.navbar} navbar navbar-dark bg-light fixed-bottom`}
       >
-        <Link href="/home" className="navbar-brand">
+        <Link href="/" className="navbar-brand">
           <Image src="/icons/home.svg" alt="" width={40} height={45} />
         </Link>
-        <Link href="/create" className="navbar-brand">
+        <Link href="/recipe/create" className="navbar-brand">
           <Image src="/icons/plus-square.svg" alt="" width={40} height={45} />
         </Link>
         <Link href="/chat" className="navbar-brand">
@@ -22,7 +22,7 @@ function navbar() {
             height={45}
           />
         </Link>
-        <Link href="/profile" className="navbar-brand">
+        <Link href="/users/profile" className="navbar-brand">
           <Image src="/icons/user.svg" alt="" width={40} height={45} />
         </Link>
       </nav>

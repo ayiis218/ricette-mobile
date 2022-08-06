@@ -3,7 +3,7 @@ import React from 'react';
 
 import style from './styles/popular.module.css';
 
-function FormPopular() {
+const FormPopular = () => {
   return (
     <section className={style.popularRecipe}>
       <div className="d-flex justify-content-center mb-4">
@@ -50,5 +50,5 @@ function FormPopular() {
       ))}
     </section>
   );
-}
+};
 export default FormPopular;

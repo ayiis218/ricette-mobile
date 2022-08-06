@@ -1,66 +1,37 @@
-.search {
+.section {
   background-color: var(--mainColor);
   border: 1px solid var(--mainColor);
   width: 480px;
+  overflow: hidden;
 }
-.section {
-  margin-left: 50px;
-  margin-right: 50px;
-  width: 78vh;
-  margin-top: 20px;
-  background-color: var(--color-1) !important;
-  border-radius: 200px;
-}
-
-.section div {
-  border-radius: 200px !important;
-}
-
 .section span {
-  background-color: transparent !important;
+  background-color: var(--color-1) !important;
   border: none !important;
-  border-radius: 20px;
+  border-radius: 60px;
+  height: 50px;
+  margin-top: 20px;
+  width: 350px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .section input {
   border: none !important;
   background-color: var(--color-1) !important;
-  border-radius: 200px !important;
-  margin: 4px;
+  border-radius: 50px !important;
+  margin: 0;
+  height: 30px;
+}
+.section input:hover {
+  color: var(--mainColor);
+}
+.section span:hover,
+.section span:focus {
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11) !important;
+  border: 3px solid var(--secondColor) !important;
 }
 @media (min-width: 765px) {
   .section {
     overflow: hidden;
-  }
-
-  .search {
-    background-color: var(--mainColor);
-    border: 1px solid var(--mainColor);
-    width: 480px;
-  }
-  .section {
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 60vh;
-    margin-top: 20px;
-    background-color: var(--color-1) !important;
-    border-radius: 200px;
-  }
-
-  .section div {
-    border-radius: 200px !important;
-  }
-
-  .section span {
-    background-color: transparent !important;
-    border: none !important;
-    border-radius: 20px;
-  }
-
-  .section input {
-    border: none !important;
-    background-color: var(--color-1) !important;
-    border-radius: 200px !important;
-    margin: 4px;
   }
 }

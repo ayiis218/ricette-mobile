@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import propTypes from 'prop-types';
 
-const InputText = React.forwardRef(
+const InputText = forwardRef(
   (
     {
       id,

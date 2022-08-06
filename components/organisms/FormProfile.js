@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import style from './styles/profile.module.css';
 
-function FormDetail() {
+const FormDetail = (props) => {
   return (
     <div className={style.section}>
       <div className={style.hero}>
