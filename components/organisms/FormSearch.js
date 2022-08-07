@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/dist/client/link';
 
 import style from './styles/recipe.module.css';
 

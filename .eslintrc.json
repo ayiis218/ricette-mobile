@@ -1,6 +1,23 @@
 {
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb"
-  ]
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb:recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": false,
+            "js": true,
+            "parser": "babel-eslint"
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {}
 }

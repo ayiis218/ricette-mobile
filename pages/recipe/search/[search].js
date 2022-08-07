@@ -1,21 +1,22 @@
 import Head from 'next/head';
-import FormSearch from '../../components/organisms/FormSearch';
-import MainLayout from '../../layouts/MainLayout';
+import FormSearch from '../../../components/organisms/FormSearch';
+import MainLayout from '../../../layouts/MainLayout';
 import axios from 'axios';
 
-export async function getStaticProps() {
-  const popularRecipe = await axios({
+export async function getServerSideProps(context) {
+  const { search } = context.query;
+  const response = await axios({
     method: 'GET',
-    url: 'http://localhost:8120/recipe',
+    url: `http://localhost:8120/search/${search}`,
   });
   return {
     props: {
-      dataPopular: popularRecipe?.data.data,
+      data: response?.data?.data,
     },
   };
 }
 
-function search({ dataPopular }) {
+function search({ data }) {
   return (
     <div>
       <Head>
@@ -24,7 +25,7 @@ function search({ dataPopular }) {
         <link rel="icon" href="/icon.png" />
       </Head>
       <MainLayout>
-        <FormSearch data={dataPopular} />
+        <FormSearch data={data} />
       </MainLayout>
     </div>
   );

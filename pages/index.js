@@ -23,6 +23,7 @@ export async function getStaticProps() {
 }
 
 function home({ dataNew, dataPopular }) {
+  
   return (
     <div>
       <Head>
