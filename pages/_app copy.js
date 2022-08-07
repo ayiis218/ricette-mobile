@@ -1,4 +1,4 @@
-import App from 'next/app';
+/* import App from 'next/app';
 import React from 'react';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from '../redux/store';
@@ -34,3 +34,4 @@ const MyApp = ({ Component, pageProps }) => {
    const { auth } = useSelector((state) => state);
    return <Component {...pageProps} />;
 };
+ */

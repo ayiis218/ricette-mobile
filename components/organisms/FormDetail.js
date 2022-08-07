@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import { Box, Tab } from '@mui/material';
+import { TabList, TabPanel, TabContext } from '@mui/lab';
 import Link from 'next/link';
 
 import style from './styles/detail.module.css';

@@ -1,4 +1,4 @@
-import axios from 'axios';
+/* import axios from 'axios';
 
 export default function handlerLogin(req, res) {
   const { email, password } = req.body;
@@ -24,4 +24,4 @@ export default function handlerRegis(req, res) {
      .catch((err) => {
        res.status(400).json({ msg: err?.response?.data });
      });
- }
+ } */
