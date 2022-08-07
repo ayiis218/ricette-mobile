@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/dist/client/link';
 
 import style from './styles/profile.module.css';
 
@@ -25,7 +25,7 @@ const FormDetail = (props) => {
             </div>
             <div className="col-md-6 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
               <div className={style.content}>
-                <Link href="/profile/edit">
+                <Link href="/users/update">
                   <div className="row mt-4">
                     <div className="col-md-2 col-lg-2 d-flex align-content-center">
                       <Image
@@ -49,7 +49,7 @@ const FormDetail = (props) => {
                   </div>
                 </Link>
 
-                <Link href="/recipe/me">
+                <Link href="/users/myRecipe">
                   <div className="row mt-4">
                     <div className="col-md-2 col-lg-2 d-flex align-content-center">
                       <Image
@@ -72,7 +72,7 @@ const FormDetail = (props) => {
                     </div>
                   </div>
                 </Link>
-                <Link href="/recipe/save">
+                <Link href="#">
                   <div className="row mt-4">
                     <div className="col-md-2 col-lg-2 d-flex align-content-center">
                       <Image
@@ -95,7 +95,7 @@ const FormDetail = (props) => {
                     </div>
                   </div>
                 </Link>
-                <Link href="/recipe/like">
+                <Link href="#">
                   <div className="row mt-4">
                     <div className="col-md-2 col-lg-2 d-flex align-content-center">
                       <Image
@@ -125,6 +125,6 @@ const FormDetail = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default FormDetail;

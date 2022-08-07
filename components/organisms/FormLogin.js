@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
+import Link from 'next/dist/client/link';
 import Image from 'next/image';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
+import alert from 'sweetalert2';
 import style from './styles/login.module.css';
 
 import InputText from '../atoms/InputText';
@@ -12,51 +14,75 @@ import Button from '../atoms/Button';
 import { FiUser } from 'react-icons/fi';
 import { FiLock } from 'react-icons/fi';
 
-const FormLogin = (props) => {
+const FormLogin = () => {
   // const dispatch = useDispatch();
   const router = useRouter();
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  });
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = () => {
-    axios
-      .post('http://localhost:8120/login', { email, password })
-      .then((response) => {
-        router.replace('/');
-      })
-      .catch(({ response }) => {
-        const message = response?.data?.message;
-        setError({ errorMsg: message });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+  const { email, password } = form;
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      alert.fire({
+        title: 'Error!',
+        text: 'All field must be filled!',
+        icon: 'error',
       });
+    } else {
+      axios
+        .post('http://localhost:8120/login', form, {})
+        .then((res) => {
+          Cookies.set('token', res.token);
+
+          alert.fire({
+            title: 'Success!',
+            text: res.message,
+            icon: 'success',
+          });
+          router.push('/');
+        })
+        .catch((err) => {
+          alert.fire({
+            title: 'Error!',
+            text: err.message,
+            icon: 'error',
+          });
+        });
+    }
   };
   return (
     <div className={style.section}>
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
+          <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
             <div className={style.left}>
-              <div className={style.title}>
+              <span>
                 <Image
                   src="/img/user.png"
                   width={200}
                   height={200}
                   alt="user"
                 />
-              </div>
+              </span>
             </div>
           </div>
           <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
             <div className={style.right}>
               <h4>Welcome</h4>
               <p>Log in to your exiting account.</p>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  handleLogin();
-                }}
-              >
+              <form onSubmit={(e) => handleLogin(e)}>
                 <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
                     <FiUser color="var(--color-3)" size={30} />
@@ -65,6 +91,7 @@ const FormLogin = (props) => {
                       className="form-control"
                       placeholder="examplexxx@gmail.com"
                       style={{ color: 'var(--color-3)' }}
+                      onChange={handleChange}
                     />
                   </span>
                 </div>
@@ -76,19 +103,22 @@ const FormLogin = (props) => {
                       className="form-control"
                       placeholder="Password"
                       style={{ color: 'var(--color-3)' }}
+                      onChange={handleChange}
                     />
                   </span>
                 </div>
-                {/* <div className={props.classForgot}>
-                                        <Link href="/auth/forgot">Forgot Password?</Link>
-                                    </div> */}
+                <div className={`d-flex justify-content-end`}>
+                  <Link href="/auth/forget">
+                    <p className={style.link}>Forgot Password?</p>
+                  </Link>
+                </div>
                 <div className="row">
                   <div className="col d-flex justify-content-center">
                     <Button
                       className={`btn w-100 mt-3 ${style.button}`}
                       type="submit"
                     >
-                      POST
+                      LOG IN
                     </Button>
                   </div>
                 </div>

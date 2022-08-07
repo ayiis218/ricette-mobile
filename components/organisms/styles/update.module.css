@@ -1,0 +1,63 @@
+.section {
+  background-color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  height: 1020px;
+  width: 480px;
+  overflow: hidden;
+}
+.back {
+  margin-top: 33px;
+  margin-left: 20px;
+  background-color: var(--color-1);
+  border-radius: 20px;
+  width: 50px;
+}
+.back:hover {
+  background-color: var(--secondColor);
+  color: var(--color-1);
+}
+.section h2 {
+  color: var(--secondColor);
+  margin-top: 27px;
+  margin-left: 50px !important;
+}
+.profile {
+  position: sticky;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+.photo button {
+  color: var(--color-5);
+  background-color: var(--color-1);
+  border: 2px solid var(--mainColor);
+  border-radius: 15px;
+}
+
+.cancel button {
+  color: var(--color-5);
+  background-color: var(--color-1);
+  margin-bottom: 10px;
+  border-radius: 15px;
+  font-style: inherit;
+}
+.photo button:hover {
+  color: var(--secondColor);
+  background-color: var(--color-1);
+  border: 2px solid var(--secondColor);
+}
+
+.cancel button:hover {
+  color: var(--secondColor);
+  background-color: var(--color-1);
+  border: 2px solid var(--secondColor);
+  font-style: inherit;
+}
+
+@media (min-width: 765px) {
+  .section {
+    height: 100vh;
+  }
+}

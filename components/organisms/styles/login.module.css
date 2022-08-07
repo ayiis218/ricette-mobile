@@ -13,16 +13,15 @@
 }
 .section p {
   text-align: center;
+  color: var(--color-2);
 }
 .left,
 .right {
   margin-top: 15px;
-}
-.title {
   text-align: center;
-  color: var(--secondColor);
-  font-weight: 600;
-  font-size: 2rem !important;
+}
+.left span {
+  border-radius: 50% !important;
 }
 .subtitle {
   text-align: center;
@@ -79,7 +78,9 @@
 .option a:hover {
   text-decoration: underline;
 }
-
+.link {
+  cursor: pointer;
+}
 @media (min-width: 765px) {
   .section {
     height: 100vh;

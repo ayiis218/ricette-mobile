@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Mainlayout.module.css';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Link from 'next/dist/client/link';
 
 function MainLayout(props) {
   const router = useRouter();
@@ -39,12 +40,14 @@ function MainLayout(props) {
                 borderRadius: '30px',
               }}
             >
-              <Image
-                src="/icons/home.svg"
-                alt="icon"
-                width="25px"
-                height="25px"
-              />
+              <Link href="/">
+                <Image
+                  src="/icons/home.svg"
+                  alt="icon"
+                  width="25px"
+                  height="25px"
+                />
+              </Link>
               <span
                 style={{
                   fontWeight: 500,
@@ -52,29 +55,36 @@ function MainLayout(props) {
                   lineHeight: '18px',
                   color: '#666666',
                   marginLeft: '13px',
+                  top: '10px',
                 }}
               >
                 Home
               </span>
             </div>
-            <Image
-              src="/icons/plus-square.svg"
-              alt="icon"
-              width="25px"
-              height="25px"
-            />
-            <Image
-              src="/icons/message-circle.svg"
-              alt="icon"
-              width="25px"
-              height="25px"
-            />
-            <Image
-              src="/icons/user.svg"
-              alt="icon"
-              width="25px"
-              height="25px"
-            />
+            <Link href="/recipe/create">
+              <Image
+                src="/icons/plus-square.svg"
+                alt="icon"
+                width="25px"
+                height="25px"
+              />
+            </Link>
+            <Link href="/chat">
+              <Image
+                src="/icons/message-circle.svg"
+                alt="icon"
+                width="25px"
+                height="25px"
+              />
+            </Link>
+            <Link href="/users/profile">
+              <Image
+                src="/icons/user.svg"
+                alt="icon"
+                width="25px"
+                height="25px"
+              />
+            </Link>
           </div>
         </div>
       </div>

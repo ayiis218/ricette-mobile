@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Link from 'next/dist/client/link';
 import Image from 'next/image';
 import style from './styles/forget.module.css';
 
@@ -13,24 +13,22 @@ const FormForget = (props) => {
     <div className={style.section}>
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
+          <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
             <div className={style.left}>
-              <div className={style.title}>
+              <span>
                 <Image
                   src="/img/user.png"
                   width={200}
                   height={200}
                   alt="user"
                 />
-              </div>
+              </span>
             </div>
           </div>
           <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
             <div className={style.right}>
-              <h5 className={style.title}>Forgot Password?</h5>
-              <p className={style.subtitle}>
-                send your email to password reset
-              </p>
+              <h4>Forgot Password</h4>
+              <p>Registered e-mail address to send your password reset</p>
               <form>
                 <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
@@ -49,7 +47,7 @@ const FormForget = (props) => {
                       className={`btn w-100 mt-3 ${style.button}`}
                       type="submit"
                     >
-                      CREATE
+                      Reset Password
                     </Button>
                   </div>
                 </div>

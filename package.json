@@ -1,39 +1,41 @@
 {
-   "name": "ricette",
-   "version": "0.1.0",
-   "private": true,
-   "scripts": {
-      "dev": "next dev",
-      "build": "next build",
-      "start": "next start",
-      "lint": "next lint"
-   },
-   "dependencies": {
-      "@emotion/react": "^11.10.0",
-      "@emotion/styled": "^11.10.0",
-      "@fontsource/inter": "^4.5.11",
-      "@fontsource/poppins": "^4.5.8",
-      "@mui/icons-material": "^5.8.4",
-      "@mui/material": "^5.9.2",
-      "axios": "^0.27.2",
-      "bootstrap": "^5.2.0",
-      "font-awesome": "^4.7.0",
-      "next": "12.2.3",
-      "prop-types": "^15.8.1",
-      "react": "18.2.0",
-      "react-bootstrap": "^2.4.0",
-      "react-dom": "18.2.0",
-      "react-icons": "^4.4.0",
-      "react-redux": "^8.0.2",
-      "react-slick": "^0.29.0",
-      "redux": "^4.2.0",
-      "redux-persist": "^6.0.0",
-      "slick-carousel": "^1.8.1",
-      "swiper": "^8.3.2"
-   },
-   "devDependencies": {
-      "eslint": "8.20.0",
-      "eslint-config-next": "12.2.3",
-      "prettier": "2.7.1"
-   }
+  "name": "ricette",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@fontsource/inter": "^4.5.11",
+    "@fontsource/poppins": "^4.5.8",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/lab": "^5.0.0-alpha.93",
+    "@mui/material": "^5.9.2",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
+    "font-awesome": "^4.7.0",
+    "js-cookie": "^3.0.1",
+    "next": "12.2.3",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
+    "react-slick": "^0.29.0",
+    "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
+    "sweetalert2": "^11.4.26",
+    "swiper": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "8.20.0",
+    "eslint-config-next": "12.2.3",
+    "prettier": "2.7.1"
+  }
 }

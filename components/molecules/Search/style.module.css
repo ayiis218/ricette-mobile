@@ -23,7 +23,7 @@
   height: 30px;
 }
 .section input:hover {
-  color: var(--mainColor);
+  color: var(--color-5);
 }
 .section span:hover,
 .section span:focus {

@@ -8,15 +8,16 @@
   --secondColor: #efc81a;
   --color-1: #ffffff;
   --color-2: #a09b9b;
-  --color-3: #B0B0B0;
-  --color-4: #e7e7e7;
+  --color-3: #b0b0b0;
+  --color-4: #002cee;
   --color-5: #000000;
+  --color-6: #fcf4d9;
   --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-black-300: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 body {
-  background-color: var(--color-1);
+  background-color: var(--color-5);
   min-height: 100vh;
   display: flex;
   justify-content: center;

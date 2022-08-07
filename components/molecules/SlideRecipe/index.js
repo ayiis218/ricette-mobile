@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/dist/client/link';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -38,7 +38,7 @@ function index({ data }) {
                   <div className={style.card}>
                     <div className={style.image}>
                       <div className="col-md-12 col-lg-12">
-                        <Link href="/recipe/detail">
+                        <Link href={`recipe/detail/${item.id_recipe}`}>
                           <h5 className={style.label}>{item.name_recipe}</h5>
                         </Link>
                         <img
@@ -50,7 +50,6 @@ function index({ data }) {
                           alt={item.images}
                           height={220}
                           width={140}
-                          //
                         />
                       </div>
                     </div>

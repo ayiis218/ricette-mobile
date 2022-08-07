@@ -11,7 +11,6 @@
   background-color: var(--color-1);
   border-radius: 20px;
   width: 50px;
-  cursor: pointer;
 }
 .back:hover {
   background-color: var(--secondColor);
@@ -24,14 +23,12 @@
 }
 .images {
   margin-left: 20px !important;
-  cursor: pointer;
 }
 .images img {
   border-radius: 1rem;
 }
 .title {
   margin-left: 15px !important;
-  cursor: pointer;
 }
 .title h4 {
   margin-top: 0;

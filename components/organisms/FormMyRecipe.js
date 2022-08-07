@@ -1,26 +1,24 @@
 import React from 'react';
 import Link from 'next/dist/client/link';
 
-import style from './styles/popular.module.css';
+import style from './styles/recipe.module.css';
 
 import { IoIosArrowBack } from 'react-icons/io';
-import { IoBookmarkOutline } from 'react-icons/io5';
-import { BiLike } from 'react-icons/bi';
 
-function popular({ data }) {
+function myRecipe({ data }) {
   return (
     <div className={style.section}>
       <div className="container">
         <div className="row">
           <div className="col-md-2 col-lg-2">
             <div className={style.back}>
-              <Link href="/">
+              <Link href="/users/profile">
                 <IoIosArrowBack size={40} />
               </Link>
             </div>
           </div>
           <div className="col-md-10 col-lg-10">
-            <h2>Popular Menu</h2>
+            <h2>My Recipe</h2>
           </div>
         </div>
         {!data.length ? (
@@ -44,21 +42,9 @@ function popular({ data }) {
               </div>
               <div className="col-md-5 col-lg-5">
                 <div className={style.title}>
-                  <Link href={`detail/${item.id_recipe}`}>
-                    <h4>{item.name_recipe}</h4>
-                  </Link>
+                  <h4>{item.name_recipe}</h4>
                   <span>{item.name}</span>
                   <h5>{item.comment}</h5>
-                </div>
-              </div>
-              <div className="col-md-4 col-lg-4">
-                <div className={style.response}>
-                  <button type="button" className="btn">
-                    <IoBookmarkOutline size={20} />
-                  </button>
-                  <button type="button" className="btn">
-                    <BiLike size={20} />
-                  </button>
                 </div>
               </div>
             </div>
@@ -69,4 +55,4 @@ function popular({ data }) {
   );
 }
 
-export default popular;
+export default myRecipe;

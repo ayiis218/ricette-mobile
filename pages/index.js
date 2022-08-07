@@ -1,5 +1,4 @@
 import Head from 'next/head';
-// import FormHome from '../components/organisms/FormHome'
 import Search from '../components/molecules/Search';
 import Slider from '../components/molecules/SlideRecipe';
 import Popular from '../components/molecules/SlidePopular';
@@ -7,18 +6,23 @@ import NavBar from '../components/atoms/Navbar';
 import axios from 'axios';
 
 export async function getStaticProps() {
-  const response = await axios({
+  const newRecipe = await axios({
     method: 'GET',
     url: 'http://localhost:8120/recipe/latest',
   });
+  const popularRecipe = await axios({
+    method: 'GET',
+    url: 'http://localhost:8120/recipe',
+  });
   return {
     props: {
-      data: response?.data?.data,
+      dataNew: newRecipe?.data?.data,
+      dataPopular: popularRecipe?.data.data,
     },
   };
 }
 
-function home({ data }) {
+function home({ dataNew, dataPopular }) {
   return (
     <div>
       <Head>
@@ -27,10 +31,9 @@ function home({ data }) {
         <link rel="icon" href="/icon.png" />
       </Head>
       <Search />
-      <Slider data={data} />
-      <Popular data={data} />
+      <Slider data={dataNew} />
+      <Popular data={dataPopular} />
       <NavBar />
-      {/* <FormHome /> */}
     </div>
   );
 }

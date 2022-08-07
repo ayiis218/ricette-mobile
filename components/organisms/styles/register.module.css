@@ -13,6 +13,7 @@
 }
 .section p {
   text-align: center;
+  color: var(--color-2);
 }
 .left,
 .right {

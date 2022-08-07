@@ -5,14 +5,23 @@
   width: 500px;
   overflow: hidden;
 }
+.section h4 {
+  text-align: center;
+  color: var(--secondColor);
+  font-weight: 600;
+  font-size: 2rem !important;
+}
 .section p {
   text-align: center;
+  color: var(--color-2);
 }
-.left {
-  margin-top: 15px;
-}
+.left,
 .right {
   margin-top: 15px;
+  text-align: center;
+}
+.left span {
+  border-radius: 50% !important;
 }
 .title {
   text-align: center;

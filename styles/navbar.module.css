@@ -1,20 +1,21 @@
 .section {
   background-color: var(--mainColor);
   border: 1px solid var(--mainColor);
-  width: 100px;
+  width: 110px;
 }
 .navbar {
-  margin-right: 30px !important;
-  margin-left: 30px !important;
+  margin-right: 25px !important;
+  margin-left: 25px !important;
+  cursor: pointer;
 }
 
 @media (min-width: 765px) {
   .section {
     overflow: hidden;
-    width: 100px;
+    width: 150px;
   }
   .navbar {
-    margin-right: 463px !important;
-    margin-left: 463px !important;
+    margin-right: 440px !important;
+    margin-left: 440px !important;
   }
 }

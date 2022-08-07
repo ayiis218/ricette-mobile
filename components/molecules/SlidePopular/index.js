@@ -1,51 +1,60 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/dist/client/link';
 import style from './style.module.css';
 
-function index() {
+function index({ data }) {
   return (
     <section className={style.section}>
       <div className="container">
         <div className="Row">
-          <div className="col">
-            <h1 className="heading">Popular Recepies</h1>
-          </div>
-        </div>
-        <div className="row align-items-start">
-          <div className="col-md-12 m-3">
-            <p className="label">Orange La Pasta</p>
-            <div className={style.img}>
-              <Image
-                src="/img/garpu.png"
-                alt="picture"
-                width={85}
-                height={85}
-              />
+          <div className="col-md-12 col-lg-12 d-flex justify-content-start">
+            <div className="d-flex justify-between">
+              <h1>Popular Recipes</h1>
             </div>
           </div>
-          {/* <div className="col-md-12 m-3">
-                        <p className="label">Orange La Pasta</p>
-                        <div className={style.img}>
-                            <Image 
-                                src="/img/panci.png" 
-                                alt="picture" 
-                                width={90} 
-                                height={90}
-                            />
-                        </div>
+          <div className="col-md-12 col-lg-12 mt-3 d-flex justify-content-end">
+            <Link href={'/recipe/popular'}>
+              <p className="me-3 mt-1">see more</p>
+            </Link>
+          </div>
+          <div className={style.card} key={index}>
+            {!data.length ? (
+              <></>
+            ) : (
+              data.map((item, index) => (
+                <div className="col">
+                  <div className="row">
+                    <div className="col-3">
+                      <div className={style.img}>
+                        <img
+                          className="m-3"
+                          src={`${
+                            item.images
+                              ? `http://localhost:8120/${item.images}`
+                              : `http://localhost:8120/picture/recipe/original.jpg`
+                          }`}
+                          alt={item.images}
+                          width={85}
+                          height={85}
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-12 m-3">
-                        <p className="label">Orange La Pasta</p>
-                        <div className={style.img}>
-                            <Image 
-                                src="/img/lobster.png" 
-                                alt="picture" 
-                                width={90} 
-                                height={90} 
-                            />
+                    <div className="col-md-9">
+                      <div className={style.title}>
+                        <h6>{item.name_recipe}</h6>
+                        <span>{item.name}</span>
+                        <div className="d-flex gap-1 align-items-center">
+                          <img src="/icons/star.svg" alt="star" height="12px" />
+                          <span className="mb-1">4.7</span>
                         </div>
-                    </div> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       </div>
     </section>

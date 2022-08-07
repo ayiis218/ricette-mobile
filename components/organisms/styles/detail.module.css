@@ -14,53 +14,63 @@
   margin: 1.5rem;
   z-index: 1;
 }
-.img {
+.image {
   height: 50vh;
   width: 480px;
-  background-color: black;
   color: var(--mainColor);
   display: flex;
   align-items: flex-end;
-  padding-bottom: 3rem;
-  padding-left: 2.5rem;
-  padding-right: 1.5rem;
 }
-.img p {
-  color: var(--color-2) !important;
+.image h1 {
+  position: absolute;
+  margin-top: 34vh;
+  margin-left: 4vh;
+  font-weight: bold;
+  font-size: 50px;
+  font-family: sans-serif;
+  color: var(--color-1);
 }
-.img h3 {
-  z-index: 2px;
-  font-size: 39px;
+.image h6 {
+  position: absolute;
+  margin-top: 42vh;
+  margin-left: 5vh;
+  font-style: italic;
+  color: var(--color-2);
 }
+
 .buttonControl {
+  position: absolute;
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: flex-end;
 }
 .save {
+  position: absolute;
   background-color: var(--secondColor) !important;
   color: var(--color-1);
+  margin-top: 28vh;
   width: 36px;
   height: 36px;
-  padding: 0;
   border: none;
-  margin-left: 1rem;
+  margin-left: 2rem;
   border-radius: 1rem;
 }
 .like {
-  background-color: var(--color-1) !important;
+  position: absolute;
+  background-color: var(--color-1);
   color: var(--secondColor);
+  margin-top: 28vh;
   width: 36px;
   height: 36px;
-  padding: 0;
   border: none;
-  margin-left: 1rem;
+  margin-left: 5rem;
   border-radius: 1rem;
 }
 .save:hover,
 .like:hover {
-  color: var(--color-5) !important;
+  background-color: var(--color-4) !important;
+  color: var(--color-1) !important;
   border: 2px !important;
 }
 .content {
@@ -87,17 +97,18 @@
 }
 .tab {
   border: 0;
-  background-color: var(--mainColor) !important;
+  background-color: var(--color-3) !important;
 }
 .tab:active {
   background-color: transparent !important;
 }
-.playContainer {
-  background-color: var(--color-1);
+.videos {
+  background-color: var(--color-6);
   padding: 12px;
-  border-radius: 1rem;
+  border-radius: 15px;
+  margin-top: 6px;
 }
-.buttonPlay {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;

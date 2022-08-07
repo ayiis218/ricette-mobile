@@ -1,50 +1,57 @@
 .section {
   background-color: var(--mainColor);
   border: 1px solid var(--mainColor);
-  height: 520px;
+  height: 110vh;
   width: 480px;
   overflow: hidden;
 }
 .section h1 {
   position: absolute;
   width: 320px;
-  margin-left: 35px !important;
+  margin-left: 40px;
   margin-top: 15px;
-
   font-style: normal;
   font-weight: 700;
   font-size: 25px;
-  line-height: 30px;
   color: var(--color-5);
 }
-.section p {
-  position: absolute;
-  width: 300px;
-  height: 35px;
-  margin-left: 137px !important;
-  margin-top: 70px;
-  font-size: 20px;
-  font-weight: 600;
-}
-.label {
-  position: absolute;
-  color: var(--color-5);
-  z-index: 1;
-}
-.img {
-  position: absolute;
+.image img {
+  border-radius: 10px;
+  object-fit: 'cover';
   margin-left: 20px !important;
-  margin-top: 65px;
-  border-radius: 15px;
+  margin-top: 20px !important;
 }
-
+.card {
+  margin-top: 10px !important;
+  margin: 10px;
+  border-radius: 15px;
+  padding: 0;
+  cursor: pointer;
+  background-color: var(--color-1);
+}
+.title {
+  margin-top: 15px;
+  margin-left: 5px;
+}
+.title h6 {
+  font-style: normal;
+  color: var(--color-2);
+}
+.title span {
+  color: var(--color-2);
+  font-size: small;
+  margin-bottom: 15px;
+}
 @media (min-width: 768px) {
   .section {
+    height: 110vh;
     overflow: hidden;
   }
 }
 .section p {
   margin-left: 120px !important;
+  cursor: pointer;
+  color: blue;
 }
 .section h1 {
   margin-left: 20px !important;
