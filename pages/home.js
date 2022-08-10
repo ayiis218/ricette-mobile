@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 // import * as Type from '../redux/auth/type';
 import { FiSearch } from 'react-icons/fi';
-import Slider from 'react-slick';
 
 // custom components
 import MainLayout from '../layouts/MainLayout';

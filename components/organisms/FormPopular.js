@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'next/dist/client/link';
-
+import Link from 'next/link';
+import Image from 'next/image';
 import style from './styles/popular.module.css';
 
 import { IoIosArrowBack } from 'react-icons/io';
@@ -30,7 +30,7 @@ function popular({ data }) {
             <div className="row mt-5">
               <div className="col-md-3 col-lg-3">
                 <div className={style.images}>
-                  <img
+                  <Image
                     src={`${
                       item.images
                         ? `http://localhost:8120/${item.images}`
@@ -39,7 +39,7 @@ function popular({ data }) {
                     alt={item.images}
                     width={90}
                     height={90}
-                  ></img>
+                  ></Image>
                 </div>
               </div>
               <div className="col-md-5 col-lg-5">
@@ -47,7 +47,7 @@ function popular({ data }) {
                   <Link href={`detail/${item.id_recipe}`}>
                     <h4>{item.name_recipe}</h4>
                   </Link>
-                  <span>{item.name}</span>
+                  <h5>{item.name}</h5>
                   <h5>{item.comment}</h5>
                 </div>
               </div>

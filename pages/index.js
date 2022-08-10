@@ -1,18 +1,22 @@
 import Head from 'next/head';
+import axios from 'axios';
+import { API_URL } from '../helper/env';
+
+import MainLayout from '../layouts/MainLayout';
+
 import Search from '../components/molecules/Search';
 import Slider from '../components/molecules/SlideRecipe';
 import Popular from '../components/molecules/SlidePopular';
 import NavBar from '../components/atoms/Navbar';
-import axios from 'axios';
 
 export async function getStaticProps() {
   const newRecipe = await axios({
     method: 'GET',
-    url: 'http://localhost:8120/recipe/latest',
+    url: `${API_URL}recipe/latest`,
   });
   const popularRecipe = await axios({
     method: 'GET',
-    url: 'http://localhost:8120/recipe',
+    url: `${API_URL}recipe`,
   });
   return {
     props: {
@@ -23,7 +27,6 @@ export async function getStaticProps() {
 }
 
 function home({ dataNew, dataPopular }) {
-  
   return (
     <div>
       <Head>

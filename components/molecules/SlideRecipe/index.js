@@ -41,7 +41,7 @@ function index({ data }) {
                         <Link href={`recipe/detail/${item.id_recipe}`}>
                           <h5 className={style.label}>{item.name_recipe}</h5>
                         </Link>
-                        <img
+                        <Image
                           src={`${
                             item.images
                               ? `http://localhost:8120/${item.images}`

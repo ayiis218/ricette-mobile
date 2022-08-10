@@ -1,12 +1,14 @@
 import Head from 'next/head';
+import axios from 'axios';
+import { API_URL } from '../../helper/env';
+
 import FormPopular from '../../components/organisms/FormPopular';
 import MainLayout from '../../layouts/MainLayout';
-import axios from 'axios';
 
 export async function getStaticProps() {
   const popularRecipe = await axios({
     method: 'GET',
-    url: 'http://localhost:8120/recipe',
+    url: `${API_URL}recipe`,
   });
   return {
     props: {

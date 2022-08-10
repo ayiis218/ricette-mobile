@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Link from 'next/dist/client/link';
 import Image from 'next/image';
-import axios from 'axios';
 import Cookies from 'js-cookie';
+import axios from '../../helper/axios';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import alert from 'sweetalert2';
@@ -16,21 +16,21 @@ import { FiLock } from 'react-icons/fi';
 
 const FormLogin = () => {
   // const dispatch = useDispatch();
-  const router = useRouter();
-  const [form, setForm] = useState({
+
+  /*   const [form, setForm] = useState({
     email: '',
     password: '',
-  });
-
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleChange = (e) => {
+  }); */
+  /*   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-  };
-  const { email, password } = form;
+  }; */
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -41,24 +41,27 @@ const FormLogin = () => {
         icon: 'error',
       });
     } else {
+      setLoading(true);
       axios
-        .post('http://localhost:8120/login', form, {})
+        .post('login', { email, password })
         .then((res) => {
-          Cookies.set('token', res.token);
-
+          Cookies.set('token', res?.data?.token);
           alert.fire({
             title: 'Success!',
-            text: res.message,
+            text: 'Login Success',
             icon: 'success',
           });
           router.push('/');
         })
         .catch((err) => {
           alert.fire({
-            title: 'Error!',
-            text: err.message,
+            title: 'Failed!',
+            text: `Cek password`,
             icon: 'error',
           });
+        })
+        .finally(() => {
+          setLoading(false);
         });
     }
   };
@@ -82,7 +85,7 @@ const FormLogin = () => {
             <div className={style.right}>
               <h4>Welcome</h4>
               <p>Log in to your exiting account.</p>
-              <form onSubmit={(e) => handleLogin(e)}>
+              <form onSubmit={handleLogin}>
                 <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
                     <FiUser color="var(--color-3)" size={30} />
@@ -91,7 +94,9 @@ const FormLogin = () => {
                       className="form-control"
                       placeholder="examplexxx@gmail.com"
                       style={{ color: 'var(--color-3)' }}
-                      onChange={handleChange}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
                     />
                   </span>
                 </div>
@@ -103,7 +108,9 @@ const FormLogin = () => {
                       className="form-control"
                       placeholder="Password"
                       style={{ color: 'var(--color-3)' }}
-                      onChange={handleChange}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                      }}
                     />
                   </span>
                 </div>
@@ -117,8 +124,9 @@ const FormLogin = () => {
                     <Button
                       className={`btn w-100 mt-3 ${style.button}`}
                       type="submit"
+                      disabled={loading}
                     >
-                      LOG IN
+                      {loading ? 'Loading...' : 'Log in'}
                     </Button>
                   </div>
                 </div>

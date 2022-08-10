@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['http://localhost:8120'],
+    domains: ['localhost'],
+  },
+  env: {
+    API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
   // swcMinify: true,
 };

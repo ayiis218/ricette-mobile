@@ -26,7 +26,7 @@ function index({ data }) {
                 <div className="col">
                   <div className="row">
                     <div className="col-3">
-                      <div className={style.img}>
+                      <div className={style.image}>
                         <img
                           className="m-3"
                           src={`${
@@ -42,7 +42,9 @@ function index({ data }) {
                     </div>
                     <div className="col-md-9">
                       <div className={style.title}>
-                        <h6>{item.name_recipe}</h6>
+                        <Link href={`/recipe/detail/${item.id_recipe}`}>
+                          <h6>{item.name_recipe}</h6>
+                        </Link>
                         <span>{item.name}</span>
                         <div className="d-flex gap-1 align-items-center">
                           <img src="/icons/star.svg" alt="star" height="12px" />

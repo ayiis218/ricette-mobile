@@ -10,7 +10,7 @@ function index(props) {
   return (
     <div className={style.section}>
       <div className="row">
-        <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
+        <div className="col-md-6 col-lg-12 d-flex justify-content-center">
           <form id="search" action={`recipe/search/${search}`}>
             <div className="input-group mb-3">
               <span className="input-group-text test" id="basic-addon1">

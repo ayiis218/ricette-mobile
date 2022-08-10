@@ -18,8 +18,6 @@
   height: 50vh;
   width: 480px;
   color: var(--mainColor);
-  display: flex;
-  align-items: flex-end;
 }
 .image h1 {
   position: absolute;
@@ -82,25 +80,13 @@
   border-radius: 1.5rem 1.5rem 0 0;
   padding: 1.5rem;
 }
-.label {
-  position: absolute;
-  z-index: 1px;
-}
-.pict {
-  position: absolute;
-}
-.buttonControl {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-end;
-}
 .tab {
   border: 0;
   background-color: var(--color-3) !important;
 }
-.tab:active {
-  background-color: transparent !important;
+.active,
+.tab:hover {
+  background-color: var(--secondColor) !important;
 }
 .videos {
   background-color: var(--color-6);
@@ -119,4 +105,7 @@
 }
 
 @media (min-width: 765px) {
+  .section {
+    width: 480px;
+  }
 }

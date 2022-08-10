@@ -2,7 +2,7 @@
   background-color: var(--mainColor);
   border: 1px solid var(--mainColor);
   height: 110vh;
-  width: 480px;
+  width: 450px;
   overflow: hidden;
 }
 .section h1 {
@@ -45,6 +45,7 @@
 @media (min-width: 768px) {
   .section {
     height: 110vh;
+    width: 470px;
     overflow: hidden;
   }
 }

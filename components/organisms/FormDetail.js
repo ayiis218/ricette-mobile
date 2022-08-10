@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 import { Box, Tab } from '@mui/material';
 import { TabList, TabPanel, TabContext } from '@mui/lab';
-import Link from 'next/link';
 
 import style from './styles/detail.module.css';
 
@@ -94,7 +93,7 @@ const FormDetail = ({ data }) => {
                           </div>
                         </div>
                         <div className="col-8">
-                          <h4>Step 1</h4>
+                          <h4>Step 2</h4>
                           <p>Boil eggs for 3 minutes</p>
                         </div>
                       </div>

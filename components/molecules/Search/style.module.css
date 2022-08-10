@@ -1,7 +1,7 @@
 .section {
   background-color: var(--mainColor);
   border: 1px solid var(--mainColor);
-  width: 480px;
+  width: 450px;
   overflow: hidden;
 }
 .section span {
@@ -33,5 +33,6 @@
 @media (min-width: 765px) {
   .section {
     overflow: hidden;
+    width: 470px;
   }
 }

@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import axios from 'axios';
+import { API_URL } from '../../../helper/env';
+
 import FormDetailRecipe from '../../../components/organisms/FormDetail';
 import MainLayout from '../../../layouts/MainLayout';
 
 export async function getServerSideProps(context) {
-  const { id } = context.query
+  const { id } = context.query;
   const response = await axios({
     method: 'GET',
-    url: `http://localhost:8120/recipe/${id}`,
+    url: `${API_URL}recipe/${id}`,
   });
   return {
     props: {

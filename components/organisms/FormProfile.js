@@ -2,27 +2,45 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/dist/client/link';
 
+import { IoIosLogOut } from 'react-icons/io';
 import style from './styles/profile.module.css';
 
-const FormDetail = (props) => {
+const FormDetail = ({ data }) => {
   return (
     <div className={style.section}>
       <div className={style.hero}>
-        <div className={style.img}>
+        <div className={style.profile}>
           <div className="row w-100">
-            <div className="col-md-6 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
-              <div className={style.title}>
-                <Image
-                  src="/img/user.png"
-                  width={100}
-                  height={100}
-                  alt="user"
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
-              <h5>Mareta Lopeda</h5>
-            </div>
+            {!data.length ? (
+              <></>
+            ) : (
+              data.map((item, index) => (
+                <>
+                  <div className="col-md-12 col-lg-12 d-flex justify-content-end">
+                    <Link href="/auth/login">
+                      <IoIosLogOut size={30} color="#F5F5F5" />
+                    </Link>
+                  </div>
+                  <div className="col-md-12 col-lg-12 d-flex justify-content-center">
+                    <div className={style.title}>
+                      <Image
+                        src={`${
+                          item.photo
+                            ? `http://localhost:8120/${item.photo}`
+                            : `http://localhost:8120/picture/user/chef.jpg`
+                        }`}
+                        alt={item.photo}
+                        width={120}
+                        height={120}
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-12 col-lg-12 d-flex justify-content-center">
+                    <h5>{item.name}</h5>
+                  </div>
+                </>
+              ))
+            )}
             <div className="col-md-6 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
               <div className={style.content}>
                 <Link href="/users/update">
@@ -48,30 +66,36 @@ const FormDetail = (props) => {
                     </div>
                   </div>
                 </Link>
+                {!data.length ? (
+                  <></>
+                ) : (
+                  data.map((item, index) => (
+                    <Link href={`/users/myrecipe/${item.id_users}`}>
+                      <div className="row mt-4">
+                        <div className="col-md-2 col-lg-2 d-flex align-content-center">
+                          <Image
+                            src="/icons/award.svg"
+                            alt="user"
+                            height={30}
+                            width={30}
+                          />
+                        </div>
+                        <div className="col-md-8 col-lg-8">
+                          <h5> My Recipe </h5>
+                        </div>
+                        <div className="col-md-2 col-lg-2">
+                          <Image
+                            src="/icons/back-in.svg"
+                            alt="user"
+                            height={25}
+                            width={25}
+                          />
+                        </div>
+                      </div>
+                    </Link>
+                  ))
+                )}
 
-                <Link href="/users/myRecipe">
-                  <div className="row mt-4">
-                    <div className="col-md-2 col-lg-2 d-flex align-content-center">
-                      <Image
-                        src="/icons/award.svg"
-                        alt="user"
-                        height={30}
-                        width={30}
-                      />
-                    </div>
-                    <div className="col-md-8 col-lg-8">
-                      <h5> My Recipe </h5>
-                    </div>
-                    <div className="col-md-2 col-lg-2">
-                      <Image
-                        src="/icons/back-in.svg"
-                        alt="user"
-                        height={25}
-                        width={25}
-                      />
-                    </div>
-                  </div>
-                </Link>
                 <Link href="#">
                   <div className="row mt-4">
                     <div className="col-md-2 col-lg-2 d-flex align-content-center">

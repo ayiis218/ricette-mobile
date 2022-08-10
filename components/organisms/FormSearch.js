@@ -1,20 +1,43 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import Link from 'next/dist/client/link';
 import style from './styles/recipe.module.css';
+import { FiSearch } from 'react-icons/fi';
+import Image from 'next/image';
 
-import Search from '../molecules/Search';
+import InputText from '../../components/atoms/InputText';
+import { useRouter } from 'next/router';
 
 function search({ data }) {
+  const [search, setSearch] = useState();
+  /*   const router = useRouter;
+  
+  if (data === undefined) {
+    return router('/notFound');
+  } */
   return (
     <div className={style.section}>
       <div className="container">
         <div className="row">
-          <div className="col-md-10 col-lg-10">
-            <Search />
+          <div className="col-md-12 col-lg-12 d-flex justify-content-center">
+            <form id="search" action={`/recipe/search/${search}`}>
+              <div className="input-group mb-3">
+                <span className="input-group-text test" id="basic-addon1">
+                  <FiSearch color="var(--color-3)" size={30} />
+                  <InputText
+                    className="form-control"
+                    placeholder="Search Pasta, Bread, etc"
+                    type="text"
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                </span>
+              </div>
+            </form>
           </div>
         </div>
         {!data.length ? (
-          <></>
+          <div>
+            <p>NotFound</p>
+          </div>
         ) : (
           data.map((item, index) => (
             <div className="row mt-5">
@@ -34,8 +57,10 @@ function search({ data }) {
               </div>
               <div className="col-md-5 col-lg-5">
                 <div className={style.title}>
-                  <h4>{item.name_recipe}</h4>
-                  <span>{item.name}</span>
+                  <Link href={`/recipe/detail/${item.id_recipe}`}>
+                    <h4>{item.name_recipe}</h4>
+                  </Link>
+                  <h5>{item.name}</h5>
                   <h5>{item.comment}</h5>
                 </div>
               </div>
