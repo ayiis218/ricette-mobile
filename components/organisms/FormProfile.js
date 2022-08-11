@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import React from 'react';
@@ -26,7 +27,7 @@ const FormDetail = ({ data }) => {
                            </div>
                            <div className="col-12 col-lg-12 d-flex justify-content-center">
                               <div className={style.title}>
-                                 <Image
+                                 <img
                                     src={`${
                                        item.photo
                                           ? `${API_URL}${item.photo}`

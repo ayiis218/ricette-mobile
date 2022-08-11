@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
 import React from 'react';
@@ -33,7 +34,7 @@ function popular({ data }) {
                   <div className="row mt-5">
                      <div className="col-3 col-lg-3">
                         <div className={style.images}>
-                           <Image
+                           <img
                               src={`${
                                  item.images
                                     ? `${API_URL}${item.images}`
@@ -42,7 +43,7 @@ function popular({ data }) {
                               alt={item.images}
                               width={100}
                               height={100}
-                           ></Image>
+                           ></img>
                         </div>
                      </div>
                      <div className="col-5 col-lg-5">

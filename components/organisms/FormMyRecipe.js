@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
 import React from 'react';
@@ -30,16 +31,16 @@ function myRecipe({ data }) {
                   <div className="row mt-5">
                      <div className="col-3 col-lg-3">
                         <div className={style.images}>
-                           <Image
+                           <img
                               src={`${
                                  item.images
-                                    ? `http://localhost:8120/${item.images}`
-                                    : `http://localhost:8120/picture/recipe/original.jpg`
+                                    ? `https://ricette-dellapp.herokuapp.com/${item.images}`
+                                    : `https://ricette-dellapp.herokuapp.com/picture/recipe/original.jpg`
                               }`}
                               alt={item.images}
                               width={90}
                               height={90}
-                           ></Image>
+                           ></img>
                         </div>
                      </div>
                      <div className="col-5 col-lg-5">
