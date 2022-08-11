@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 // import Image from 'next/image';
 import Link from 'next/dist/client/link';
@@ -8,12 +9,12 @@ function index({ data }) {
       <section className={style.section}>
          <div className="container">
             <div className="Row">
-               <div className="col-md-12 col-lg-12 d-flex justify-content-start">
+               <div className="col-12 col-lg-12 d-flex justify-content-start">
                   <div className="d-flex justify-between">
                      <h1>Popular Recipes</h1>
                   </div>
                </div>
-               <div className="col-md-12 col-lg-12 mt-3 d-flex justify-content-end">
+               <div className="col-12 col-lg-12 mt-3 d-flex justify-content-end">
                   <Link href={'/recipe/popular'}>
                      <p className="me-3 mt-1">see more</p>
                   </Link>
@@ -41,7 +42,7 @@ function index({ data }) {
                                        />
                                     </div>
                                  </div>
-                                 <div className="col-md-9">
+                                 <div className="col-9">
                                     <div className={style.title}>
                                        <Link
                                           href={`/recipe/detail/${item.id_recipe}`}

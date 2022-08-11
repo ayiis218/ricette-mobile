@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Box, Tab } from '@mui/material';
 import { TabList, TabPanel, TabContext } from '@mui/lab';

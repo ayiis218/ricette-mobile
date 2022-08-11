@@ -17,7 +17,7 @@ function index({ data }) {
                </div>
                <Swiper
                   slidesPerView={3}
-                  slidesPerGroup={3}
+                  slidesPerGroup={1}
                   loopFillGroupWithBlank
                   navigation
                   modules={[Navigation]}
@@ -52,8 +52,8 @@ function index({ data }) {
                                              : `http://localhost:8120/picture/recipe/original.jpg`
                                        }`}
                                        alt={item.images}
-                                       height={220}
-                                       width={140}
+                                       height={155}
+                                       width={145}
                                     />
                                  </div>
                               </div>
