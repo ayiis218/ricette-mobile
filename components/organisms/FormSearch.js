@@ -4,6 +4,7 @@
 /* eslint-disable react/jsx-key */
 import React, { useState } from 'react';
 import Link from 'next/dist/client/link';
+import { API_URL } from '../../helper/env';
 import { FiSearch } from 'react-icons/fi';
 import Image from 'next/image';
 
@@ -54,8 +55,8 @@ function search({ data }) {
                            <img
                               src={`${
                                  item.images
-                                    ? `http://localhost:8120/${item.images}`
-                                    : `http://localhost:8120/picture/recipe/original.jpg`
+                                    ? `${API_URL}${item.images}`
+                                    : `${API_URL}picture/recipe/original.jpg`
                               }`}
                               alt={item.images}
                               width={90}

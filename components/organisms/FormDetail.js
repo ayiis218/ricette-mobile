@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { API_URL } from '../../helper/env';
 import { Box, Tab } from '@mui/material';
 import { TabList, TabPanel, TabContext } from '@mui/lab';
 
@@ -46,8 +47,8 @@ const FormDetail = ({ data }) => {
                            <img
                               src={`${
                                  item.images
-                                    ? `http://localhost:8120/${item.images}`
-                                    : `http://localhost:8120/picture/recipe/original.jpg`
+                                    ? `${API_URL}${item.images}`
+                                    : `${API_URL}picture/recipe/original.jpg`
                               }`}
                               alt={item.images}
                               height={360}

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 // import Image from 'next/image';
+import { API_URL } from '../../../helper/env';
 import Link from 'next/dist/client/link';
 import style from './style.module.css';
 
@@ -33,8 +34,8 @@ function index({ data }) {
                                           className="m-3"
                                           src={`${
                                              item.images
-                                                ? `http://localhost:8120/${item.images}`
-                                                : `http://localhost:8120/picture/recipe/original.jpg`
+                                                ? `${API_URL}${item.images}`
+                                                : `${API_URL}picture/recipe/original.jpg`
                                           }`}
                                           alt={item.images}
                                           width={85}

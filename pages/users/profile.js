@@ -3,9 +3,6 @@ import Head from 'next/head';
 import React from 'react';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import Cookies from 'js-cookie';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import { API_URL } from '../../helper/env';
 import FormProfile from '../../components/organisms/FormProfile';

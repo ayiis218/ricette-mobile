@@ -5,6 +5,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import style from './styles/recipe.module.css';
+import { API_URL } from '../../helper/env';
 
 import { IoIosArrowBack } from 'react-icons/io';
 
@@ -34,8 +35,8 @@ function myRecipe({ data }) {
                            <img
                               src={`${
                                  item.images
-                                    ? `https://ricette-dellapp.herokuapp.com/${item.images}`
-                                    : `https://ricette-dellapp.herokuapp.com/picture/recipe/original.jpg`
+                                    ? `${API_URL}${item.images}`
+                                    : `${API_URL}picture/recipe/original.jpg`
                               }`}
                               alt={item.images}
                               width={90}
