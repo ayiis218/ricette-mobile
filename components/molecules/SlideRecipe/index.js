@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Image from 'next/image';
@@ -47,7 +48,7 @@ function index({ data }) {
                                           {item.name_recipe}
                                        </h5>
                                     </Link>
-                                    <Image
+                                    <img
                                        src={`${
                                           item.images
                                              ? `${API_URL}${item.images}`
