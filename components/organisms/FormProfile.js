@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/dist/client/link';
+import { API_URL } from '../../helper/env';
 
 import { IoIosLogOut } from 'react-icons/io';
 import style from './styles/profile.module.css';
@@ -28,8 +29,8 @@ const FormDetail = ({ data }) => {
                                  <Image
                                     src={`${
                                        item.photo
-                                          ? `http://localhost:8120/${item.photo}`
-                                          : `http://localhost:8120/picture/user/chef.jpg`
+                                          ? `${API_URL}${item.photo}`
+                                          : `${API_URL}picture/user/chef.jpg`
                                     }`}
                                     alt={item.photo}
                                     width={120}
