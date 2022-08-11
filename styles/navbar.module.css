@@ -1,21 +1,19 @@
 .section {
-  background-color: var(--mainColor);
-  border: 1px solid var(--mainColor);
-  width: 110px;
+   background-color: var(--mainColor);
+   border: 1px solid var(--mainColor);
+   width: 850px;
 }
 .navbar {
-  margin-right: 25px !important;
-  margin-left: 25px !important;
-  cursor: pointer;
+   cursor: pointer;
 }
 
 @media (min-width: 765px) {
-  .section {
-    overflow: hidden;
-    width: 150px;
-  }
-  .navbar {
-    margin-right: 440px !important;
-    margin-left: 440px !important;
-  }
+   .section {
+      overflow: hidden;
+      width: 150px;
+   }
+   .navbar {
+      margin-right: 440px !important;
+      margin-left: 440px !important;
+   }
 }

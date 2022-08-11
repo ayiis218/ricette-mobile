@@ -1,10 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
 import React, { useState } from 'react';
 import Link from 'next/dist/client/link';
-import style from './styles/recipe.module.css';
 import { FiSearch } from 'react-icons/fi';
 import Image from 'next/image';
+
+import style from './styles/recipe.module.css';
 
 import InputText from '../../components/atoms/InputText';
 import { useRouter } from 'next/router';

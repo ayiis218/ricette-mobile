@@ -18,12 +18,12 @@ const FormDetail = ({ data }) => {
                   ) : (
                      data.map((item, index) => (
                         <>
-                           <div className="col-md-12 col-lg-12 d-flex justify-content-end">
+                           <div className="col-12 col-lg-12 d-flex justify-content-end">
                               <Link href="/auth/login">
                                  <IoIosLogOut size={30} color="#F5F5F5" />
                               </Link>
                            </div>
-                           <div className="col-md-12 col-lg-12 d-flex justify-content-center">
+                           <div className="col-12 col-lg-12 d-flex justify-content-center">
                               <div className={style.title}>
                                  <Image
                                     src={`${
@@ -37,17 +37,17 @@ const FormDetail = ({ data }) => {
                                  />
                               </div>
                            </div>
-                           <div className="col-md-12 col-lg-12 d-flex justify-content-center">
+                           <div className="col-12 col-lg-12 d-flex justify-content-center">
                               <h5>{item.name}</h5>
                            </div>
                         </>
                      ))
                   )}
-                  <div className="col-md-6 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
+                  <div className="col-12 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
                      <div className={style.content}>
                         <Link href="/users/update">
                            <div className="row mt-4">
-                              <div className="col-md-2 col-lg-2 d-flex align-content-center">
+                              <div className="col-2 col-lg-2 d-flex align-content-center">
                                  <Image
                                     src="/icons/user2.svg"
                                     alt="user"
@@ -55,10 +55,10 @@ const FormDetail = ({ data }) => {
                                     width={30}
                                  />
                               </div>
-                              <div className="col-md-8 col-lg-8">
+                              <div className="col-8 col-lg-8">
                                  <h5> Edit Profile </h5>
                               </div>
-                              <div className="col-md-2 col-lg-2">
+                              <div className="col-2 col-lg-2">
                                  <Image
                                     src="/icons/back-in.svg"
                                     alt="user"
@@ -74,7 +74,7 @@ const FormDetail = ({ data }) => {
                            data.map((item, index) => (
                               <Link href={`/users/myrecipe/${item.id_users}`}>
                                  <div className="row mt-4">
-                                    <div className="col-md-2 col-lg-2 d-flex align-content-center">
+                                    <div className="col-2 col-lg-2 d-flex align-content-center">
                                        <Image
                                           src="/icons/award.svg"
                                           alt="user"
@@ -82,10 +82,10 @@ const FormDetail = ({ data }) => {
                                           width={30}
                                        />
                                     </div>
-                                    <div className="col-md-8 col-lg-8">
+                                    <div className="col-8 col-lg-8">
                                        <h5> My Recipe </h5>
                                     </div>
-                                    <div className="col-md-2 col-lg-2">
+                                    <div className="col-2 col-lg-2">
                                        <Image
                                           src="/icons/back-in.svg"
                                           alt="user"
@@ -100,7 +100,7 @@ const FormDetail = ({ data }) => {
 
                         <Link href="#">
                            <div className="row mt-4">
-                              <div className="col-md-2 col-lg-2 d-flex align-content-center">
+                              <div className="col-2 col-lg-2 d-flex align-content-center">
                                  <Image
                                     src="/icons/book.svg"
                                     alt="user"
@@ -108,10 +108,10 @@ const FormDetail = ({ data }) => {
                                     width={30}
                                  />
                               </div>
-                              <div className="col-md-8 col-lg-8">
+                              <div className="col-8 col-lg-8">
                                  <h5> Saved Recipe </h5>
                               </div>
-                              <div className="col-md-2 col-lg-2">
+                              <div className="col-2 col-lg-2">
                                  <Image
                                     src="/icons/back-in.svg"
                                     alt="user"
@@ -123,7 +123,7 @@ const FormDetail = ({ data }) => {
                         </Link>
                         <Link href="#">
                            <div className="row mt-4">
-                              <div className="col-md-2 col-lg-2 d-flex align-content-center">
+                              <div className="col-2 col-lg-2 d-flex align-content-center">
                                  <Image
                                     src="/icons/vector.svg"
                                     alt="user"
@@ -131,10 +131,10 @@ const FormDetail = ({ data }) => {
                                     width={25}
                                  />
                               </div>
-                              <div className="col-md-8 col-lg-8">
+                              <div className="col-8 col-lg-8">
                                  <h5> Liked Recipe </h5>
                               </div>
-                              <div className="col-md-2 col-lg-2">
+                              <div className="col-2 col-lg-2">
                                  <Image
                                     src="/icons/back-in.svg"
                                     alt="user"

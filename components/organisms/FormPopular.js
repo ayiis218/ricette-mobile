@@ -14,14 +14,14 @@ function popular({ data }) {
       <div className={style.section}>
          <div className="container">
             <div className="row">
-               <div className="col-md-2 col-lg-2">
+               <div className="col-3">
                   <div className={style.back}>
                      <Link href="/">
                         <IoIosArrowBack size={40} />
                      </Link>
                   </div>
                </div>
-               <div className="col-md-10 col-lg-10">
+               <div className="col-9">
                   <h2>Popular Menu</h2>
                </div>
             </div>
@@ -30,7 +30,7 @@ function popular({ data }) {
             ) : (
                data.map((item, index) => (
                   <div className="row mt-5">
-                     <div className="col-md-3 col-lg-3">
+                     <div className="col-3 col-lg-3">
                         <div className={style.images}>
                            <Image
                               src={`${
@@ -39,12 +39,12 @@ function popular({ data }) {
                                     : `http://localhost:8120/picture/recipe/original.jpg`
                               }`}
                               alt={item.images}
-                              width={90}
-                              height={90}
+                              width={100}
+                              height={100}
                            ></Image>
                         </div>
                      </div>
-                     <div className="col-md-5 col-lg-5">
+                     <div className="col-5 col-lg-5">
                         <div className={style.title}>
                            <Link href={`detail/${item.id_recipe}`}>
                               <h4>{item.name_recipe}</h4>
@@ -53,7 +53,7 @@ function popular({ data }) {
                            <h5>{item.comment}</h5>
                         </div>
                      </div>
-                     <div className="col-md-4 col-lg-4">
+                     <div className="col-4 col-lg-4">
                         <div className={style.response}>
                            <button type="button" className="btn">
                               <IoBookmarkOutline size={20} />

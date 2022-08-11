@@ -4,75 +4,75 @@
 @import 'font-awesome/css/font-awesome.min.css';
 
 :root {
-  --mainColor: #f5f5f5;
-  --secondColor: #efc81a;
-  --color-1: #ffffff;
-  --color-2: #a09b9b;
-  --color-3: #b0b0b0;
-  --color-4: #002cee;
-  --color-5: #000000;
-  --color-6: #fcf4d9;
-  --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --shadow-black-300: 0 5px 15px rgba(0, 0, 0, 0.3);
+   --mainColor: #f5f5f5;
+   --secondColor: #efc81a;
+   --color-1: #ffffff;
+   --color-2: #a09b9b;
+   --color-3: #b0b0b0;
+   --color-4: #002cee;
+   --color-5: #000000;
+   --color-6: #fcf4d9;
+   --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.1);
+   --shadow-black-300: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 body {
-  background-color: var(--color-5);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* overflow: hidden; */
-  /* padding-bottom: 10vh; */
+   background-color: var(--color-1);
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* overflow: hidden; */
+   /* padding-bottom: 10vh; */
 }
 .heading {
-  font-size: 25px;
-  font-weight: 600;
+   font-size: 25px;
+   font-weight: 600;
 }
 .subheading {
-  font-weight: 300;
+   font-weight: 300;
 }
 * {
-  margin: 0;
-  padding: 0;
-  outline: none !important;
-  text-decoration: none;
+   margin: 0;
+   padding: 0;
+   outline: none !important;
+   text-decoration: none;
 }
 .line {
-  position: absolute;
-  left: 0;
-  border-bottom: 2px solid #f2f3f4;
+   position: absolute;
+   left: 0;
+   border-bottom: 2px solid #f2f3f4;
 }
 
 .input-text .input-group .form-control {
-  padding: 0.9375rem;
-  border-radius: 0.25rem;
+   padding: 0.9375rem;
+   border-radius: 0.25rem;
 }
 
 .input-text .input-group .form-control::placeholder {
-  font-size: 0.875rem;
-  color: #858d96;
+   font-size: 0.875rem;
+   color: #858d96;
 }
 
 .input-text .input-group .form-control:focus {
-  box-shadow: none;
+   box-shadow: none;
 }
 
 .input-text .input-group .input-group-text {
-  background-color: rgb(136, 135, 135);
-  height: 3.5rem;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+   background-color: rgb(136, 135, 135);
+   height: 3.5rem;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
 }
 
 @media screen and (max-width: 576px) {
-  .nav-tabs {
-    gap: 5px;
-  }
+   .nav-tabs {
+      gap: 5px;
+   }
 
-  .nav-tabs .nav-link {
-    font-size: 14px;
-  }
+   .nav-tabs .nav-link {
+      font-size: 14px;
+   }
 }
 
 @media screen and (min-width: 375px) {
