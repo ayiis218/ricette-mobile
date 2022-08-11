@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/dist/client/link';
+import { API_URL } from '../../../helper/env';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -48,8 +50,8 @@ function index({ data }) {
                                     <Image
                                        src={`${
                                           item.images
-                                             ? `http://localhost:8120/${item.images}`
-                                             : `http://localhost:8120/picture/recipe/original.jpg`
+                                             ? `${API_URL}${item.images}`
+                                             : `${API_URL}recipe/original.jpg`
                                        }`}
                                        alt={item.images}
                                        height={155}

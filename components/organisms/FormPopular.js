@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import style from './styles/popular.module.css';
+import { API_URL } from '../../helper/env';
 
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoBookmarkOutline } from 'react-icons/io5';
@@ -35,8 +36,8 @@ function popular({ data }) {
                            <Image
                               src={`${
                                  item.images
-                                    ? `http://localhost:8120/${item.images}`
-                                    : `http://localhost:8120/picture/recipe/original.jpg`
+                                    ? `${API_URL}${item.images}`
+                                    : `${API_URL}picture/recipe/original.jpg`
                               }`}
                               alt={item.images}
                               width={100}
