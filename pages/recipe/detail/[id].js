@@ -1,8 +1,6 @@
-import React from 'react';
 import Head from 'next/head';
 import axios from 'axios';
 import { API_URL } from '../../../helper/env';
-
 import FormDetailRecipe from '../../../components/organisms/FormDetail';
 import MainLayout from '../../../layouts/MainLayout';
 

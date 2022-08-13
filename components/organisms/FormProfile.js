@@ -1,24 +1,42 @@
-/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
-/* eslint-disable no-unused-vars */
-import React from 'react';
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react';
+import Cookies from 'js-cookie';
 import Image from 'next/image';
-import Link from 'next/dist/client/link';
+import Link from 'next/link';
+import alert from 'sweetalert2';
+import { useRouter } from 'next/router';
+
 import { API_URL } from '../../helper/env';
 
 import { IoIosLogOut } from 'react-icons/io';
 import style from './styles/profile.module.css';
 
 const FormDetail = ({ data }) => {
+   const token = Cookies.get('token');
+   const router = useRouter();
+
+   useEffect(() => {
+      if (!token) {
+         alert.fire({
+            title: 'Failed',
+            text: 'Please login',
+            icon: 'Error',
+         });
+         router.push('/auth/login');
+      }
+   }, [token]);
+
    return (
       <div className={style.section}>
          <div className={style.hero}>
             <div className={style.profile}>
                <div className="row w-100">
-                  {!data.length ? (
+                  {!data?.length ? (
                      <></>
                   ) : (
-                     data.map((item, index) => (
+                     data.map((item) => (
                         <>
                            <div className="col-12 col-lg-12 d-flex justify-content-end">
                               <Link href="/auth/login">
@@ -70,10 +88,10 @@ const FormDetail = ({ data }) => {
                               </div>
                            </div>
                         </Link>
-                        {!data.length ? (
+                        {!data?.length ? (
                            <></>
                         ) : (
-                           data.map((item, index) => (
+                           data.map((item) => (
                               <Link href={`/users/myrecipe/${item.id_users}`}>
                                  <div className="row mt-4">
                                     <div className="col-2 col-lg-2 d-flex align-content-center">

@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
 import React from 'react';
-import style from './Mainlayout.module.css';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
-import Link from 'next/dist/client/link';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import style from './Mainlayout.module.css';
 
 function MainLayout(props) {
    const router = useRouter();
@@ -16,7 +18,7 @@ function MainLayout(props) {
    return (
       <div>
          <div className="row justify-content-lg-center">
-            <div className="col-lg-12 col-xs-12" id="container">
+            <div className="col-12 col-lg-12 col-xs-12" id="container">
                <div className={style.root}>{props.children}</div>
 
                <div
@@ -33,58 +35,79 @@ function MainLayout(props) {
                   <div
                      style={{
                         backgroundColor:
-                           router.pathname === '/home'
+                           router.pathname === '/'
                               ? 'yellow'
                               : 'rgb(109 97 242 / 20%)',
-                        padding: '10px 20px',
-                        borderRadius: '30px',
+                        padding: '10px 20px 10px 20px',
+                        borderRadius: '20px',
                      }}
                   >
-                     <Link href="/">
+                     <Link href="/" className="navbar-brand">
                         <Image
                            src="/icons/home.svg"
-                           alt="icon"
-                           width="25px"
-                           height="25px"
+                           alt=""
+                           width={40}
+                           height={25}
                         />
                      </Link>
-                     <span
-                        style={{
-                           fontWeight: 500,
-                           fontSize: '14px',
-                           lineHeight: '18px',
-                           color: '#666666',
-                           marginLeft: '13px',
-                           top: '10px',
-                        }}
-                     >
-                        Home
-                     </span>
                   </div>
-                  <Link href="/recipe/create">
-                     <Image
-                        src="/icons/plus-square.svg"
-                        alt="icon"
-                        width="25px"
-                        height="25px"
-                     />
-                  </Link>
-                  <Link href="/chat">
-                     <Image
-                        src="/icons/message-circle.svg"
-                        alt="icon"
-                        width="25px"
-                        height="25px"
-                     />
-                  </Link>
-                  <Link href="/users/profile">
-                     <Image
-                        src="/icons/user.svg"
-                        alt="icon"
-                        width="25px"
-                        height="25px"
-                     />
-                  </Link>
+                  <div
+                     style={{
+                        backgroundColor:
+                           router.pathname === '/recipe/create'
+                              ? 'yellow'
+                              : 'rgb(109 97 242 / 20%)',
+                        padding: '10px 20px 10px 20px',
+                        borderRadius: '20px',
+                     }}
+                  >
+                     <Link href="/recipe/create" className="navbar-brand">
+                        <Image
+                           src="/icons/plus-square.svg"
+                           alt=""
+                           width={40}
+                           height={25}
+                        />
+                     </Link>
+                  </div>
+                  <div
+                     style={{
+                        backgroundColor:
+                           router.pathname === '/chat'
+                              ? 'yellow'
+                              : 'rgb(109 97 242 / 20%)',
+                        padding: '10px 20px 10px 20px',
+                        borderRadius: '20px',
+                     }}
+                  >
+                     <Link href="/chat" className="navbar-brand">
+                        <Image
+                           src="/icons/message-circle.svg"
+                           alt=""
+                           width={40}
+                           height={25}
+                        />
+                     </Link>
+                  </div>
+                  <div
+                     style={{
+                        backgroundColor:
+                           router.pathname === '/users/profile'
+                              ? 'yellow'
+                              : 'rgb(109 97 242 / 20%)',
+                        padding: '10px 20px 10px 20px',
+                        borderRadius: '20px',
+                     }}
+                  >
+                     <Link href="/users/profile" className="navbar-brand">
+                        <Image
+                           src="/icons/user.svg"
+                           alt=""
+                           width={40}
+                           height={25}
+                        />
+                     </Link>
+                  </div>
                </div>
             </div>
          </div>

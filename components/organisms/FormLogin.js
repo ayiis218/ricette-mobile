@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import Link from 'next/dist/client/link';
+import Link from 'next/link';
 import Image from 'next/image';
 import Cookies from 'js-cookie';
-import axios from '../../helper/axios';
-import { useRouter } from 'next/router';
 import alert from 'sweetalert2';
-import style from './styles/login.module.css';
+import { useRouter } from 'next/router';
 
+import axios from '../../helper/axios';
 import InputText from '../atoms/InputText';
 import Button from '../atoms/Button';
 
 import { FiUser } from 'react-icons/fi';
 import { FiLock } from 'react-icons/fi';
+import style from './styles/login.module.css';
 
 const FormLogin = () => {
    // const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const FormLogin = () => {
 
    const handleLogin = (e) => {
       e.preventDefault();
-
+      
       if (!email || !password) {
          alert.fire({
             title: 'Error!',

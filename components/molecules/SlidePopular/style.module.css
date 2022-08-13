@@ -30,7 +30,7 @@
    margin-top: 20px !important;
 }
 .title {
-   margin-top: 15px;
+   margin-top: 23px;
    margin-left: 5px;
 }
 .title h6 {
@@ -44,7 +44,7 @@
 }
 @media (min-width: 768px) {
    .section {
-      height: 110vh;
+      height: 100vh;
       width: 470px;
       overflow: hidden;
    }

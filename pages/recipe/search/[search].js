@@ -4,7 +4,6 @@ import axios from 'axios';
 import { API_URL } from '../../../helper/env';
 import FormSearch from '../../../components/organisms/FormSearch';
 import MainLayout from '../../../layouts/MainLayout';
-import { useRouter } from 'next/router';
 
 export async function getServerSideProps(context) {
    const { search } = context.query;

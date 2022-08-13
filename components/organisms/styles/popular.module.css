@@ -71,7 +71,10 @@
 }
 
 @media (min-width: 765px) {
-   .section {
-      height: 110vh;
+   .section h2 {
+      margin-left: 30px !important;
+   }
+   .back {
+      margin-top: 40px;
    }
 }

@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import Head from 'next/head';
 import React from 'react';

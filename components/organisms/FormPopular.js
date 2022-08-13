@@ -4,12 +4,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import style from './styles/popular.module.css';
+
 import { API_URL } from '../../helper/env';
 
+import { BiLike } from 'react-icons/bi';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoBookmarkOutline } from 'react-icons/io5';
-import { BiLike } from 'react-icons/bi';
+import style from './styles/popular.module.css';
 
 function popular({ data }) {
    return (

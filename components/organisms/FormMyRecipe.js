@@ -4,10 +4,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import style from './styles/recipe.module.css';
+
 import { API_URL } from '../../helper/env';
 
 import { IoIosArrowBack } from 'react-icons/io';
+import style from './styles/recipe.module.css';
 
 function myRecipe({ data }) {
    return (

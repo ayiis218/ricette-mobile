@@ -1,13 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-// import Image from 'next/image';
+import Link from 'next/link';
 import { API_URL } from '../../../helper/env';
-import Link from 'next/dist/client/link';
 import style from './style.module.css';
 
 function index({ data }) {
    return (
-      <section className={style.section}>
+      <div className={style.section}>
          <div className="container">
             <div className="Row">
                <div className="col-12 col-lg-12 d-flex justify-content-start">
@@ -69,7 +68,7 @@ function index({ data }) {
                </div>
             </div>
          </div>
-      </section>
+      </div>
    );
 }
 

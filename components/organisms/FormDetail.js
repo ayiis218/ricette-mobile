@@ -4,15 +4,15 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { API_URL } from '../../helper/env';
 import { Box, Tab } from '@mui/material';
 import { TabList, TabPanel, TabContext } from '@mui/lab';
 
-import style from './styles/detail.module.css';
+import { API_URL } from '../../helper/env';
 
+import { FiPlay } from 'react-icons/fi';
 import { BiLike, BiArrowBack } from 'react-icons/bi';
 import { IoBookmarkOutline } from 'react-icons/io5';
-import { FiPlay } from 'react-icons/fi';
+import style from './styles/detail.module.css';
 
 const FormDetail = ({ data }) => {
    const [value, setValue] = useState('1');
@@ -35,7 +35,7 @@ const FormDetail = ({ data }) => {
                data.map((item, index) => (
                   <>
                      <div className={style.image}>
-                        <div className="col-md-12 col-lg-12">
+                        <div className="col-12 col-lg-12">
                            <h1>{item.name_recipe}</h1>
                            <h6>By. {item.name}</h6>
                            <button type="button" className={style.save}>

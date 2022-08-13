@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/dist/client/link';
-import { API_URL } from '../../../helper/env';
+import Link from 'next/link';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { API_URL } from '../../../helper/env';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import style from './style.module.css';
@@ -40,9 +40,9 @@ function index({ data }) {
                         <SwiperSlide key={index}>
                            <div className={style.card}>
                               <div className={style.image}>
-                                 <div className="col-md-12 col-lg-12">
+                                 <div className="col-12 col-lg-12">
                                     <Link
-                                       href={`recipe/detail/${item.id_recipe}`}
+                                       href={`/recipe/detail/${item.id_recipe}`}
                                     >
                                        <h5 className={style.label}>
                                           {item.name_recipe}
@@ -55,8 +55,8 @@ function index({ data }) {
                                              : `${API_URL}recipe/original.jpg`
                                        }`}
                                        alt={item.images}
-                                       height={155}
-                                       width={145}
+                                       height={150}
+                                       width={140}
                                     />
                                  </div>
                               </div>

@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Image from 'next/image';
-import style from './styles/forget.module.css';
 
 import InputText from '../atoms/InputText';
 import Button from '../atoms/Button';
 
 import { FiUser } from 'react-icons/fi';
+import style from './styles/forget.module.css';
 
 const FormForget = (props) => {
    return (

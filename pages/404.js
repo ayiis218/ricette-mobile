@@ -8,7 +8,7 @@ const NotFound = () => {
             <div className="notfound-404">
                <h1>404</h1>
             </div>
-            <h2>Oops, The Page you are looking for can&apos;t be found!</h2>
+            <h2>Oops, Page NotFound!</h2>
             <span className="arrow" />
             <Link href="/">Return To Homepage</Link>
          </div>

@@ -36,16 +36,16 @@ function home({ dataNew, dataPopular }) {
          <div className={style.section}>
             <div className="container fluid">
                <div className="row">
-                  <div className="col col-lg-12 d-flex justify-content-center">
+                  <div className="col-12 col-lg-12 d-flex justify-content-center">
                      <Search />
                   </div>
-                  <div className="col col-lg-12 d-flex justify-content-center">
+                  <div className="col-12 col-lg-12 me-4 d-flex justify-content-center">
                      <Slider data={dataNew} />
                   </div>
-                  <div className="col col-lg-12 d-flex justify-content-center">
+                  <div className="col-12 col-lg-12 d-flex justify-content-center">
                      <Popular data={dataPopular} />
                   </div>
-                  <div className="col col-lg-12 d-flex justify-content-center">
+                  <div className="col-12 col-lg-12 d-flex justify-content-center">
                      <NavBar />
                   </div>
                </div>

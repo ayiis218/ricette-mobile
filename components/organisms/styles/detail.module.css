@@ -1,111 +1,115 @@
 .section {
-  background-color: var(--mainColor);
-  border: 1px solid var(--mainColor);
-  height: 1020px;
-  width: 480px;
-  overflow: hidden;
+   background-color: var(--mainColor);
+   border: 1px solid var(--mainColor);
+   height: 1020px;
+   width: 480px;
+   overflow: hidden;
 }
 .hero {
-  position: relative;
-  width: 480px;
+   margin-left: 10px;
+   position: relative;
+   width: 480px;
 }
 .iconBack {
-  position: absolute;
-  margin: 1.5rem;
-  z-index: 1;
+   margin-left: 25px !important;
+   position: absolute;
+   margin: 1.5rem;
+   z-index: 1;
 }
 .image {
-  height: 50vh;
-  width: 480px;
-  color: var(--mainColor);
+   height: 50vh;
+   width: 480px;
+   color: var(--mainColor);
+   filter: brightness(0.8);
 }
 .image h1 {
-  position: absolute;
-  margin-top: 34vh;
-  margin-left: 4vh;
-  font-weight: bold;
-  font-size: 50px;
-  font-family: sans-serif;
-  color: var(--color-1);
+   position: absolute;
+   margin-top: 34vh;
+   margin-left: 4vh;
+   font-weight: bold;
+   font-size: 50px;
+   font-family: sans-serif;
+   color: var(--color-1);
+   filter: brightness(1) drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.25));
 }
 .image h6 {
-  position: absolute;
-  margin-top: 42vh;
-  margin-left: 5vh;
-  font-style: italic;
-  color: var(--color-2);
+   position: absolute;
+   margin-top: 42vh;
+   margin-left: 6vh;
+   font-style: italic;
+   color: var(--color-2);
 }
 
 .buttonControl {
-  position: absolute;
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-end;
+   position: absolute;
+   display: flex;
+   height: 100%;
+   align-items: center;
+   justify-content: flex-end;
 }
 .save {
-  position: absolute;
-  background-color: var(--secondColor) !important;
-  color: var(--color-1);
-  margin-top: 28vh;
-  width: 36px;
-  height: 36px;
-  border: none;
-  margin-left: 2rem;
-  border-radius: 1rem;
+   position: absolute;
+   background-color: var(--secondColor) !important;
+   color: var(--color-1);
+   margin-top: 28vh;
+   width: 36px;
+   height: 36px;
+   border: none;
+   margin-left: 2rem;
+   border-radius: 1rem;
 }
 .like {
-  position: absolute;
-  background-color: var(--color-1);
-  color: var(--secondColor);
-  margin-top: 28vh;
-  width: 36px;
-  height: 36px;
-  border: none;
-  margin-left: 5rem;
-  border-radius: 1rem;
+   position: absolute;
+   background-color: var(--color-1);
+   color: var(--secondColor);
+   margin-top: 28vh;
+   width: 36px;
+   height: 36px;
+   border: none;
+   margin-left: 5rem;
+   border-radius: 1rem;
 }
 .save:hover,
 .like:hover {
-  background-color: var(--color-4) !important;
-  color: var(--color-1) !important;
-  border: 2px !important;
+   background-color: var(--color-4) !important;
+   color: var(--color-1) !important;
+   border: 2px !important;
 }
 .content {
-  position: absolute;
-  top: 95%;
-  width: 480px;
-  height: 100vh;
-  background-color: var(--mainColor);
-  border-radius: 1.5rem 1.5rem 0 0;
-  padding: 1.5rem;
+   position: absolute;
+   top: 95%;
+   width: 480px;
+   height: 100vh;
+   background-color: var(--mainColor);
+   border-radius: 1.5rem 1.5rem 0 0;
+   padding: 1.5rem;
 }
 .tab {
-  border: 0;
-  background-color: var(--color-3) !important;
+   border: 0;
+   background-color: var(--color-3) !important;
 }
 .active,
 .tab:hover {
-  background-color: var(--secondColor) !important;
+   background-color: var(--secondColor) !important;
 }
 .videos {
-  background-color: var(--color-6);
-  padding: 12px;
-  border-radius: 15px;
-  margin-top: 6px;
+   background-color: var(--color-6);
+   padding: 12px;
+   border-radius: 15px;
+   margin-top: 6px;
 }
 .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  background-color: var(--secondColor);
-  border-radius: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 60px;
+   height: 60px;
+   background-color: var(--secondColor);
+   border-radius: 1rem;
 }
 
 @media (min-width: 765px) {
-  .section {
-    width: 480px;
-  }
+   .section {
+      width: 480px;
+   }
 }
