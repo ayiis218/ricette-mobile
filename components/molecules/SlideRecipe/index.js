@@ -22,7 +22,6 @@ function index({ data }) {
                   slidesPerView={3}
                   slidesPerGroup={1}
                   loopFillGroupWithBlank
-                  navigation
                   modules={[Navigation]}
                   breakpoints={{
                      100: {

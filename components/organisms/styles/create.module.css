@@ -2,20 +2,25 @@
    height: 100vh;
    width: 480px;
    background-color: var(--mainColor);
+   box-shadow: 0px 8px 10px rgba(255, 251, 0, 0.877);
 }
+
 .title {
    margin: 50px;
 }
+
 .title h4 {
    color: var(--secondColor);
    font-size: 35px;
 }
+
 .section span {
    background-color: var(--color-1) !important;
    border: none !important;
    border-radius: 20px;
    width: 435px;
 }
+
 .section input {
    position: absolute;
    border: none !important;
@@ -23,9 +28,11 @@
    border-radius: 200px !important;
    margin: 4px;
 }
+
 .section button {
    width: 130px;
 }
+
 .button {
    border: 1;
    box-shadow: none;
@@ -36,14 +43,17 @@
    font-weight: 500;
    border-color: var(--secondColor);
 }
+
 .button:hover {
    background-color: var(--mainColor);
    border-color: var(--secondColor);
 }
+
 .clicked:hover {
    color: var(--color-2);
    border-color: var(--secondColor);
 }
+
 @media (min-width: 765px) {
    .section {
       overflow: hidden;

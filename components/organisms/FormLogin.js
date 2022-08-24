@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Cookies from 'js-cookie';
 import alert from 'sweetalert2';
 import { useRouter } from 'next/router';
-
+import { toastr } from '../../helper/toastr';
 import axios from '../../helper/axios';
 import InputText from '../atoms/InputText';
 import Button from '../atoms/Button';
@@ -32,7 +32,7 @@ const FormLogin = () => {
 
    const handleLogin = (e) => {
       e.preventDefault();
-      
+
       if (!email || !password) {
          alert.fire({
             title: 'Error!',
@@ -45,25 +45,50 @@ const FormLogin = () => {
             .post('login', { email, password })
             .then((res) => {
                Cookies.set('token', res?.data?.token);
-               alert.fire({
-                  title: 'Success!',
-                  text: 'Login Success',
-                  icon: 'success',
-               });
-               router.push('/');
+               const tkn = res?.data?.token;
+               if (tkn == undefined) {
+                  alert.fire({
+                     title: 'Failed!',
+                     text: `Cek Email`,
+                     icon: 'error',
+                  });
+               } else {
+                  alert.fire({
+                     title: 'Success!',
+                     text: 'Login Success',
+                     icon: 'success',
+                  });
+                  router.push('/');
+               }
             })
             .catch((err) => {
-               alert.fire({
-                  title: 'Failed!',
-                  text: `Cek password ${err.message}`,
-                  icon: 'error',
-               });
+               if (err.response.data.code === 422) {
+                  const { error } = err.response.data;
+                  error.map((el) => toastr(el, 'error'));
+               } else {
+                  alert.fire({
+                     title: 'Failed!',
+                     text: `Cek password ${err.message}`,
+                     icon: 'error',
+                  });
+               }
             })
             .finally(() => {
                setLoading(false);
             });
       }
    };
+
+   useEffect(() => {
+      if (Cookies === undefined) {
+         alert.fire({
+            title: 'Failed!',
+            text: `Login Failed`,
+            icon: 'error',
+         });
+      }
+   }, []);
+
    return (
       <div className={style.section}>
          <div className="container">
