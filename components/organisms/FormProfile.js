@@ -28,6 +28,16 @@ const FormDetail = ({ data }) => {
       }
    }, [token]);
 
+   const HandleLogout = () => {
+      Cookies.remove('token');
+      alert.fire({
+         title: 'success',
+         text: 'Back login to access',
+         icon: 'success',
+      });
+      router.push('/auth/login');
+   };
+
    return (
       <div className={style.section}>
          <div className={style.hero}>
@@ -39,9 +49,11 @@ const FormDetail = ({ data }) => {
                      data.map((item) => (
                         <>
                            <div className="col-12 col-lg-12 d-flex justify-content-end">
-                              <Link href="/auth/login">
-                                 <IoIosLogOut size={30} color="#F5F5F5" />
-                              </Link>
+                              <IoIosLogOut
+                                 size={30}
+                                 color="#F5F5F5"
+                                 onClick={HandleLogout}
+                              />
                            </div>
                            <div className="col-12 col-lg-12 d-flex justify-content-center">
                               <div className={style.title}>
