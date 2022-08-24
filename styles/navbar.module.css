@@ -3,22 +3,26 @@
    border: 1px solid var(--color-1);
    width: 480px;
 }
+
 .navbar {
    cursor: pointer;
    justify-content: space-evenly;
    background-color: var(--color-1) !important;
    padding: 5px;
 }
+
 .nav {
    margin-left: 50px !important;
 }
+
 @media (min-width: 765px) {
    .section {
       overflow: hidden;
       width: 470px;
    }
+
    .navbar {
-      margin-right: 415px !important;
-      margin-left: 415px !important;
+      margin-right: 425px !important;
+         margin-left: 425px !important;
    }
 }

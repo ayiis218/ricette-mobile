@@ -4,12 +4,15 @@
    height: 1020px;
    width: 480px;
    overflow: hidden;
+   box-shadow: 0px 0px 5px 0px var(--secondColor);
 }
+
 .hero {
    position: relative;
-   width: 480px;
+   width: 100%;
    background-color: var(--color-1) !important;
 }
+
 .logout {
    position: absolute;
    margin: 1.5rem;
@@ -17,9 +20,10 @@
    justify-content: end;
    margin-block-end: 5px;
 }
+
 .profile {
    height: 40vh;
-   width: 480px;
+   width: 100%;
    background-color: var(--secondColor);
    display: flex;
    align-items: center;
@@ -27,17 +31,20 @@
    padding-left: 2.5rem;
    padding-right: 1.5rem;
 }
+
 .title img {
    border-radius: 60px;
 }
+
 .profile h3 {
    z-index: 2px;
 }
+
 .content {
    position: absolute;
-   margin-left: 5px;
+   margin-left: 10px;
    top: 90%;
-   width: 450px;
+   width: 95%;
    height: 100vh;
    background-color: var(--color-1);
    border-radius: 1.5rem 1.5rem 0 0;
@@ -46,6 +53,7 @@
 
 @media (min-width: 765px) {
    .section {
+      width: 440px;
       height: 100vh;
    }
 }
