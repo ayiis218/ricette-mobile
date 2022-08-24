@@ -1,24 +1,49 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import Head from 'next/head';
 import axios from 'axios';
+import alert from 'sweetalert2';
 import { API_URL } from '../../../helper/env';
 import FormSearch from '../../../components/organisms/FormSearch';
 import MainLayout from '../../../layouts/MainLayout';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export async function getServerSideProps(context) {
-   const { search } = context.query;
-   const response = await axios({
-      method: 'GET',
-      url: `${API_URL}search/${search}`,
-   });
-   return {
-      props: {
-         data: response?.data?.data,
-      },
-   };
+   try {
+      const { search } = context.query;
+      const res = await axios({
+         method: 'GET',
+         url: `${API_URL}search/${search}`,
+      });
+      return {
+         props: {
+            data: res?.data?.data,
+         },
+      };
+   } catch (err) {
+      return {
+         props: {
+            data: err.response.data.data,
+         },
+      };
+   }
 }
 
 function search({ data }) {
+   const router = useRouter();
+
+   useEffect(() => {
+      if (data <= 0) {
+         alert.fire({
+            title: 'Failed',
+            text: 'Data not found',
+            icon: 'Error',
+         });
+         router.push('/');
+      }
+   }, [data]);
    return (
       <div>
          <Head>
