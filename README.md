@@ -26,6 +26,14 @@ git clone https://github.com/ayiis218/ricette-mobile.git
 npm install
 ```
 
+### ENV Example
+
+```
+NEXT_PUBLIC_APP_NAME= [APP_NAME]
+NEXT_PUBLIC_NODE_ENV= [NODE_ENV]
+NEXT_PUBLIC_API_URL= [API_URL]
+```
+
 ## Contact
 
 email : ayiis.218@gmail.com
