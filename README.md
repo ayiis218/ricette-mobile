@@ -1,19 +1,35 @@
 # Ricette-mobile
+<!-- PROJECT LOGO -->
+
+<div align="center">
+
+<img src="https://i.postimg.cc/yx8pCmKW/icon.png" align="center" width="250" height="auto" />
+
+</div>
+
+<div align="center">
+
+<br />
+
+[![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
+
+</div>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Create a Node.js app for building ricette dellApp using Next JS.
+Ricette Mobile is a Ricette dellApp mobile aplication to search for recipes and share a recipe with the public
 
 ### Built With
 This app was built with some technologies below:
 - [Node.js](https://nodejs.org/en/)
 - [Next.js](https://nextjs.org/)
 - [React.js](https://reactjs.com/)
+- [React-icons](https://react-icons.github.io/react-icons/)
 - [Boostrap](https://getbootstrap.com/)
-
-### Requirements
-* [Node.js](https://nodejs.org/en/)
-* [Database](./blanja.sql)
+- [Axios](https://axios-http.com/docs/intro)
+- [Js-Cookie](https://www.npmjs.com/package/js-cookie)
+- [Swiper](https://swiperjs.com/react)
+- [Material-ui](https://mui.com/)
 
 ### Installation
 - Clone my repositories
