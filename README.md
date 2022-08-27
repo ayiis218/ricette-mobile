@@ -43,7 +43,7 @@ NEXT_PUBLIC_API_URL= [API_URL]
 <tr>
 <td><h4 style="margin-buttom:8px">Register</h4></td>
 <td><h4 style="margin-buttom:8px">Login</h4></td>
-<td><h4 style="margin-buttom:8px">Forget</h4></td>
+<td><h4 style="margin-buttom:8px">Forgot</h4></td>
 <td><h4 style="margin-buttom:8px">Home</h4></td>
 </tr>
 <tr>
