@@ -14,16 +14,6 @@ import { FiLock } from 'react-icons/fi';
 import style from './styles/login.module.css';
 
 const FormLogin = () => {
-   // const dispatch = useDispatch();
-
-   /*   const [form, setForm] = useState({
-    email: '',
-    password: '',
-  }); */
-   /*   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  }; */
    const router = useRouter();
    const [loading, setLoading] = useState(false);
 
@@ -45,6 +35,7 @@ const FormLogin = () => {
             .post('login', { email, password })
             .then((res) => {
                Cookies.set('token', res?.data?.token);
+               Cookies.set('user', res?.data?.user);
                const tkn = res?.data?.token;
                if (tkn == undefined) {
                   alert.fire({
@@ -139,7 +130,7 @@ const FormLogin = () => {
                            </span>
                         </div>
                         <div className={`d-flex justify-content-end`}>
-                           <Link href="/auth/forget">
+                           <Link href="/auth/forgot">
                               <p className={style.link}>Forgot Password?</p>
                            </Link>
                         </div>

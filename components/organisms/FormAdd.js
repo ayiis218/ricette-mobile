@@ -1,13 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-indent-props */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import alert from 'sweetalert2';
 import { useRouter } from 'next/router';
-
+import alert from 'sweetalert2';
 import InputText from '../atoms/InputText';
 import Button from '../atoms/Button';
-
+import axios from '../../helper/axios';
 import { IoMdBook } from 'react-icons/io';
 import { FiVideo } from 'react-icons/fi';
 import style from './styles/create.module.css';
@@ -15,6 +14,11 @@ import style from './styles/create.module.css';
 const FormAdd = () => {
    const token = Cookies.get('token');
    const router = useRouter();
+   const [loading, setLoading] = useState(false);
+   const [name, setName] = useState('');
+   const [ingredients, setIngredients] = useState('');
+   const [video, setVideo] = useState('');
+   const id_user = Cookies.get('user');
 
    useEffect(() => {
       if (!token) {
@@ -26,6 +30,42 @@ const FormAdd = () => {
          router.push('/auth/login');
       }
    }, [token]);
+
+   const body = name || ingredients || video;
+
+   const handleSubmit = (e) => {
+      e.preventDefault();
+
+      if (!body) {
+         alert.fire({
+            title: 'Error!',
+            text: 'All field must be filled!',
+            icon: 'error',
+         });
+      } else {
+         setLoading(true);
+         axios
+            .post('recipe/add', { name, ingredients, video, id_user })
+            .then((res) => {
+               alert.fire({
+                  title: 'Success!',
+                  text: `Create recipe Success ${res}`,
+                  icon: 'success',
+               });
+               router.push('/users/profile');
+            })
+            .catch((err) => {
+               alert.fire({
+                  title: 'Error!',
+                  text: err.message,
+                  icon: 'error',
+               });
+            })
+            .finally(() => {
+               setLoading(false);
+            });
+      }
+   };
 
    return (
       <div className={style.section}>
@@ -39,7 +79,7 @@ const FormAdd = () => {
             </div>
             <div className="row">
                <div className="col-12 col-lg-12 m-0 d-flex justify-content-center">
-                  <form action="submit">
+                  <form onSubmit={handleSubmit}>
                      <div className="input-group mb-3">
                         <span className="input-group-text" id="basic-addon1">
                            <IoMdBook color="var(--color-3)" size={30} />
@@ -48,6 +88,9 @@ const FormAdd = () => {
                               className="form-control"
                               placeholder="Title"
                               style={{ color: 'var(--color-3)' }}
+                              onChange={(e) => {
+                                 setName(e.target.value);
+                              }}
                            />
                         </span>
                      </div>
@@ -60,6 +103,9 @@ const FormAdd = () => {
                               rows={6}
                               defaultValue={''}
                               style={{ color: 'var(--color-3)' }}
+                              onChange={(e) => {
+                                 setIngredients(e.target.value);
+                              }}
                            />
                         </span>
                      </div>
@@ -72,6 +118,9 @@ const FormAdd = () => {
                               placeholder="Add  Video"
                               aria-label="add video"
                               aria-describedby="basic-addon1"
+                              onChange={(e) => {
+                                 setVideo(e.target.value);
+                              }}
                            />
                         </span>
                      </div>
@@ -80,8 +129,9 @@ const FormAdd = () => {
                            <Button
                               className={`btn w-40 mt-3 ${style.button}`}
                               type="submit"
+                              disabled={loading}
                            >
-                              POST
+                              {loading ? 'Loading...' : 'POST'}
                            </Button>
                         </div>
                      </div>

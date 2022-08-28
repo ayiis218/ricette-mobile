@@ -47,39 +47,33 @@ function search({ data }) {
                   </form>
                </div>
             </div>
-            {!data.length ? (
-               <div>
-                  <p>NotFound</p>
-               </div>
-            ) : (
-               data.map((item, index) => (
-                  <div className="row mt-5">
-                     <div className="col-3 col-lg-3">
-                        <div className={style.images}>
-                           <img
-                              src={`${
-                                 item.images
-                                    ? `${API_URL}${item.images}`
-                                    : `${API_URL}picture/recipe/original.jpg`
-                              }`}
-                              alt={item.images}
-                              width={90}
-                              height={90}
-                           ></img>
-                        </div>
-                     </div>
-                     <div className="col-5 col-lg-5">
-                        <div className={style.title}>
-                           <Link href={`/recipe/detail/${item.id_recipe}`}>
-                              <h4>{item.name_recipe}</h4>
-                           </Link>
-                           <h5>{item.name}</h5>
-                           <h5>{item.comment}</h5>
-                        </div>
+            {data.map((item, index) => (
+               <div className="row mt-5">
+                  <div className="col-3 col-lg-3">
+                     <div className={style.images}>
+                        <img
+                           src={`${
+                              item.images
+                                 ? `${API_URL}${item.images}`
+                                 : `${API_URL}picture/recipe/original.jpg`
+                           }`}
+                           alt={item.images}
+                           width={90}
+                           height={90}
+                        ></img>
                      </div>
                   </div>
-               ))
-            )}
+                  <div className="col-5 col-lg-5">
+                     <div className={style.title}>
+                        <Link href={`/recipe/detail/${item.id_recipe}`}>
+                           <h4>{item.name_recipe}</h4>
+                        </Link>
+                        <h5>{item.name}</h5>
+                        <h5>{item.comment}</h5>
+                     </div>
+                  </div>
+               </div>
+            ))}
          </div>
       </div>
    );

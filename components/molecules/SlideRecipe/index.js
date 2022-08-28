@@ -51,7 +51,7 @@ function index({ data }) {
                                        src={`${
                                           item.images
                                              ? `${API_URL}${item.images}`
-                                             : `${API_URL}recipe/original.jpg`
+                                             : `${API_URL}picture/recipe/original.jpg`
                                        }`}
                                        alt={item.images}
                                        height={150}

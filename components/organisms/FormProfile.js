@@ -30,6 +30,7 @@ const FormDetail = ({ data }) => {
 
    const HandleLogout = () => {
       Cookies.remove('token');
+      Cookies.remove('user');
       alert.fire({
          title: 'success',
          text: 'Back login to access',

@@ -20,51 +20,47 @@ function index({ data }) {
                   </Link>
                </div>
                <div className={style.card} key={index}>
-                  {!data.length ? (
-                     <></>
-                  ) : (
-                     data.map((item) => (
-                        <>
-                           <div className="col">
-                              <div className="row">
-                                 <div className="col-3">
-                                    <div className={style.image}>
-                                       <img
-                                          className="m-3"
-                                          src={`${
-                                             item.images
-                                                ? `${API_URL}${item.images}`
-                                                : `${API_URL}picture/recipe/original.jpg`
-                                          }`}
-                                          alt={item.images}
-                                          width={85}
-                                          height={85}
-                                       />
-                                    </div>
+                  {data.map((item) => (
+                     <>
+                        <div className="col">
+                           <div className="row">
+                              <div className="col-3">
+                                 <div className={style.image}>
+                                    <img
+                                       className="m-3"
+                                       src={`${
+                                          item.images
+                                             ? `${API_URL}${item.images}`
+                                             : `${API_URL}picture/recipe/original.jpg`
+                                       }`}
+                                       alt={item.images}
+                                       width={85}
+                                       height={85}
+                                    />
                                  </div>
-                                 <div className="col-9">
-                                    <div className={style.title}>
-                                       <Link
-                                          href={`/recipe/detail/${item.id_recipe}`}
-                                       >
-                                          <h6>{item.name_recipe}</h6>
-                                       </Link>
-                                       <span>{item.name}</span>
-                                       <div className="d-flex gap-1 align-items-center">
-                                          <img
-                                             src="/icons/star.svg"
-                                             alt="star"
-                                             height="12px"
-                                          />
-                                          <span className="mb-1">4.7</span>
-                                       </div>
+                              </div>
+                              <div className="col-9">
+                                 <div className={style.title}>
+                                    <Link
+                                       href={`/recipe/detail/${item.id_recipe}`}
+                                    >
+                                       <h6>{item.name_recipe}</h6>
+                                    </Link>
+                                    <span>{item.name}</span>
+                                    <div className="d-flex gap-1 align-items-center">
+                                       <img
+                                          src="/icons/star.svg"
+                                          alt="star"
+                                          height="12px"
+                                       />
+                                       <span className="mb-1">4.7</span>
                                     </div>
                                  </div>
                               </div>
                            </div>
-                        </>
-                     ))
-                  )}
+                        </div>
+                     </>
+                  ))}
                </div>
             </div>
          </div>

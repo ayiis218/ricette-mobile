@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-
 import InputText from '../../atoms/InputText';
-
 import { FiSearch } from 'react-icons/fi';
 import style from './style.module.css';
 
 function index(props) {
-   const [search, setSearch] = useState();
+   const [search, setSearch] = useState('');
 
    return (
       <div className={style.section}>

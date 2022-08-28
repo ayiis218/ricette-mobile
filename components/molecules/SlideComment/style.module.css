@@ -1,0 +1,52 @@
+.section {
+   background-color: var(--mainColor);
+   border: 1px solid var(--mainColor);
+   height: 100%;
+   width: 100%;
+}
+
+.content {
+   background-color: var(--mainColor);
+   border-radius: 10px;
+   margin: 8px;
+   height: 80vh;
+   padding-top: 10px;
+}
+
+.content textarea {
+   background-color: var(--color-6);
+   border-radius: 10px;
+   width: 405px;
+   height: 150px;
+   margin-top: 10px;
+   margin-left: 10px;
+}
+
+.content h3 {
+   margin-top: 2px;
+   margin-left: 10px;
+}
+
+.content button {
+   margin-left: 5px;
+   margin-top: 20px;
+   width: 400px;
+   height: 40px;
+   border: 0;
+   border-radius: 10px;
+   background-color: var(--secondColor);
+   color: var(--color-1);
+}
+
+.info {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+}
+
+@media (min-width: 768px) {
+   .section {
+      width: 100%;
+   }
+}

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Box, Tab } from '@mui/material';
 import { TabList, TabPanel, TabContext } from '@mui/lab';
 
+import Comment from '../molecules/SlideComment';
 import { API_URL } from '../../helper/env';
 
 import { FiPlay } from 'react-icons/fi';
@@ -29,40 +30,32 @@ const FormDetail = ({ data }) => {
                   <BiArrowBack size={30} color="#F5F5F5" />
                </Link>
             </div>
-            {!data.length ? (
-               <></>
-            ) : (
-               data.map((item, index) => (
-                  <>
-                     <div className={style.image}>
-                        <div className="col-12 col-lg-12">
-                           <h1>{item.name_recipe}</h1>
-                           <h6>By. {item.name}</h6>
-                           <button type="button" className={style.save}>
-                              <IoBookmarkOutline size={20} />
-                           </button>
-                           <button type="button" className={style.like}>
-                              <BiLike size={20} />
-                           </button>
-                           <img
-                              src={`${
-                                 item.images
-                                    ? `${API_URL}${item.images}`
-                                    : `${API_URL}picture/recipe/original.jpg`
-                              }`}
-                              alt={item.images}
-                              height={360}
-                              width={480}
-                           />
-                        </div>
-                     </div>
-                  </>
-               ))
-            )}
-            {!data.length ? (
-               <></>
-            ) : (
-               data.map((item, index) => (
+            {data.map((item, index) => (
+               <div className={style.image}>
+                  <div className="col-12 col-lg-12">
+                     <h1>{item.name_recipe}</h1>
+                     <h6>By. {item.name}</h6>
+                     <button type="button" className={style.save}>
+                        <IoBookmarkOutline size={20} />
+                     </button>
+                     <button type="button" className={style.like}>
+                        <BiLike size={20} />
+                     </button>
+                     <img
+                        src={`${
+                           item.images
+                              ? `${API_URL}${item.images}`
+                              : `${API_URL}picture/recipe/original.jpg`
+                        }`}
+                        alt={item.images}
+                        height={360}
+                        width={437}
+                     />
+                  </div>
+               </div>
+            ))}
+            {data.map((item, index) => (
+               <>
                   <div className={style.content}>
                      <Box sx={{ width: '100%', typography: 'body1' }}>
                         <TabContext value={value}>
@@ -89,21 +82,9 @@ const FormDetail = ({ data }) => {
                                        </div>
                                     </div>
                                     <div className="col-8">
-                                       <h4>Step 1</h4>
-                                       <p>Boil eggs for 3 minutes</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div className={style.videos}>
-                                 <div className="row">
-                                    <div className="col-4">
-                                       <div className={style.button}>
-                                          <FiPlay size={30} color="#ffffff" />
-                                       </div>
-                                    </div>
-                                    <div className="col-8">
-                                       <h4>Step 2</h4>
-                                       <p>Boil eggs for 3 minutes</p>
+                                       <Link href={`/video/${item.video}`}>
+                                          <h4>Step 1</h4>
+                                       </Link>
                                     </div>
                                  </div>
                               </div>
@@ -111,8 +92,11 @@ const FormDetail = ({ data }) => {
                         </TabContext>
                      </Box>
                   </div>
-               ))
-            )}
+                  <div className={style.Comment}>
+                     <Comment data={item.id_recipe} />
+                  </div>
+               </>
+            ))}
          </div>
       </div>
    );
