@@ -27,8 +27,8 @@ export async function getStaticProps() {
    } catch (err) {
       return {
          props: {
-            dataNew: err.response.data.data,
-            dataPopular: err.response.data.data,
+            dataNew: err.message,
+            dataPopular: err.message,
          },
       };
    }

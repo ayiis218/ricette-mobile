@@ -5,12 +5,15 @@ import Link from 'next/link';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { API_URL } from '../../../helper/env';
+import Default from '../../../public/img/original.jpg';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import style from './style.module.css';
 
 function index({ data }) {
+   const file = data.map((item, index) => item.images);
+   console.log(file);
    return (
       <div className={style.section}>
          <div className="container">
@@ -51,8 +54,11 @@ function index({ data }) {
                                           : `${API_URL}picture/recipe/original.jpg`
                                     }`}
                                     alt={item.name_recipe}
-                                    height={150}
+                                    height={140}
                                     width={140}
+                                    onError={(e) => {
+                                       e.target.src = Default;
+                                    }}
                                  />
                               </div>
                            </div>
