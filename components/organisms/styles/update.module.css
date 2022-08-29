@@ -5,6 +5,7 @@
    width: 480px;
    overflow: hidden;
 }
+
 .back {
    margin-top: 30px;
    margin-left: 20px;
@@ -12,15 +13,19 @@
    border-radius: 20px;
    width: 50px;
 }
+
 .back:hover {
    background-color: var(--secondColor);
    color: var(--color-1);
 }
+
 .section h2 {
+   text-transform: capitalize;
    color: var(--secondColor);
    margin-top: 27px;
    margin-left: 50px !important;
 }
+
 .profile {
    position: sticky;
    top: 200px !important;
@@ -36,20 +41,24 @@
    border: 2px solid var(--mainColor);
    border-radius: 15px;
 }
+
 .photo button:hover {
    color: var(--secondColor);
    background-color: var(--color-1);
    border: 2px solid var(--secondColor);
 }
+
 .cancel {
    align-items: flex-end;
 }
+
 .cancel button {
    color: var(--color-5);
    background-color: var(--color-1);
    margin-bottom: 10px;
    border-radius: 15px;
 }
+
 .cancel button:hover {
    color: var(--secondColor);
    background-color: var(--color-1);

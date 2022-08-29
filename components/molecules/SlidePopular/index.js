@@ -44,7 +44,7 @@ function index({ data }) {
                                     <Link
                                        href={`/recipe/detail/${item.id_recipe}`}
                                     >
-                                       <h6>{item.name_recipe}</h6>
+                                       <h5>{item.name_recipe}</h5>
                                     </Link>
                                     <span>{item.name}</span>
                                     <div className="d-flex gap-1 align-items-center">

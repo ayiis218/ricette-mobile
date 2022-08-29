@@ -48,6 +48,7 @@
 }
 
 .section h2 {
+   text-transform: capitalize;
    color: var(--secondColor);
    margin-top: 27px;
    margin-left: 50px !important;
@@ -62,10 +63,12 @@
 }
 
 .title {
+   text-transform: capitalize;
    margin-left: 15px !important;
 }
 
 .title h4 {
+   text-transform: capitalize;
    margin-top: 0;
    margin-left: 0;
 }

@@ -6,6 +6,7 @@
 }
 
 .title {
+   text-transform: capitalize;
    margin: 50px;
 }
 

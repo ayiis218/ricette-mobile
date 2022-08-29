@@ -50,7 +50,7 @@ function index({ data }) {
                                           ? `${API_URL}${item.images}`
                                           : `${API_URL}picture/recipe/original.jpg`
                                     }`}
-                                    alt={item.nae_recipe}
+                                    alt={item.name_recipe}
                                     height={150}
                                     width={140}
                                  />

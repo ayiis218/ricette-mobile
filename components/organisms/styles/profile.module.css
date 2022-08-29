@@ -37,6 +37,7 @@
 }
 
 .profile h3 {
+   text-transform: capitalize;
    z-index: 2px;
 }
 

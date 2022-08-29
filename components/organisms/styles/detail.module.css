@@ -16,16 +16,25 @@
    position: absolute;
    margin: 1.5rem;
    z-index: 1;
+   filter: brightness(3) drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
 }
+
 
 .image {
    height: 50vh;
    width: 100%;
    color: var(--mainColor);
+   filter: brightness(1);
+   }
+   
+   .image img {
+      position: absolute;
    filter: brightness(0.8);
+   z-index: -2;
 }
 
 .image h1 {
+   text-transform: capitalize;
    position: absolute;
    margin-top: 34vh;
    margin-left: 4vh;
@@ -33,15 +42,16 @@
    font-size: 50px;
    font-family: sans-serif;
    color: var(--color-1);
-   filter: brightness(1) drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.25));
+   filter: brightness(3) drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
 }
 
 .image h6 {
+   text-transform: capitalize;
    position: absolute;
    margin-top: 42vh;
    margin-left: 6vh;
    font-style: italic;
-   color: var(--color-2);
+   color: var(--color-1);
 }
 
 .buttonControl {

@@ -8,6 +8,7 @@
 }
 
 .section h4 {
+  text-transform: capitalize;
   text-align: center;
   color: var(--secondColor);
   font-weight: 600;
