@@ -87,7 +87,7 @@
    position: relative;
    top: 95%;
    width: 100%;
-   height: 80vh;
+   height: 65vh;
    background-color: var(--mainColor);
    border-radius: 1.5rem 1.5rem 0 0;
    padding: 1.5rem;
@@ -122,13 +122,14 @@
 
 .comment {
    position: absolute;
-   top: 700px;
+   top: 500px;
    width: 100%;
    height: 40vh;
    background-color: var(--color-6);
    padding: 1rem;
    z-index: 2;
 }
+
 @media (min-width: 765px) {
    .section {
       width: 440px;

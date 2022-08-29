@@ -19,7 +19,7 @@ function index({ data }) {
                      <p className="me-3 mt-1">see more</p>
                   </Link>
                </div>
-               <div className={style.card} key={index}>
+               <div className={style.card}>
                   {data.map((item) => (
                      <>
                         <div className="col">
@@ -33,7 +33,7 @@ function index({ data }) {
                                              ? `${API_URL}${item.images}`
                                              : `${API_URL}picture/recipe/original.jpg`
                                        }`}
-                                       alt={item.images}
+                                       alt={item.name_recipe}
                                        width={85}
                                        height={85}
                                     />

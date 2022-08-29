@@ -32,37 +32,33 @@ function index({ data }) {
                      },
                   }}
                >
-                  {!data.length ? (
-                     <></>
-                  ) : (
-                     data.map((item, index) => (
-                        <SwiperSlide key={index}>
-                           <div className={style.card}>
-                              <div className={style.image}>
-                                 <div className="col-12 col-lg-12">
-                                    <Link
-                                       href={`/recipe/detail/${item.id_recipe}`}
-                                    >
-                                       <h5 className={style.label}>
-                                          {item.name_recipe}
-                                       </h5>
-                                    </Link>
-                                    <img
-                                       src={`${
-                                          item.images
-                                             ? `${API_URL}${item.images}`
-                                             : `${API_URL}picture/recipe/original.jpg`
-                                       }`}
-                                       alt={item.images}
-                                       height={150}
-                                       width={140}
-                                    />
-                                 </div>
+                  {data.map((item, index) => (
+                     <SwiperSlide key={index}>
+                        <div className={style.card}>
+                           <div className={style.image}>
+                              <div className="col-12 col-lg-12">
+                                 <Link
+                                    href={`/recipe/detail/${item.id_recipe}`}
+                                 >
+                                    <h5 className={style.label}>
+                                       {item.name_recipe}
+                                    </h5>
+                                 </Link>
+                                 <img
+                                    src={`${
+                                       item.images
+                                          ? `${API_URL}${item.images}`
+                                          : `${API_URL}picture/recipe/original.jpg`
+                                    }`}
+                                    alt={item.nae_recipe}
+                                    height={150}
+                                    width={140}
+                                 />
                               </div>
                            </div>
-                        </SwiperSlide>
-                     ))
-                  )}
+                        </div>
+                     </SwiperSlide>
+                  ))}
                </Swiper>
             </div>
          </div>
