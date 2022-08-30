@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import FormUpdate from '../../components/organisms/FormUpdate';
+import FormUpdate from '../../../components/organisms/FormUpdate';
 
 function update() {
    return (

@@ -8,7 +8,7 @@ import Button from '../atoms/Button';
 import { FiUser } from 'react-icons/fi';
 import style from './styles/forget.module.css';
 
-const FormForget = (props) => {
+const FormForgot = (props) => {
    return (
       <div className={style.section}>
          <div className="container">
@@ -62,4 +62,4 @@ const FormForget = (props) => {
    );
 };
 
-export default FormForget;
+export default FormForgot;

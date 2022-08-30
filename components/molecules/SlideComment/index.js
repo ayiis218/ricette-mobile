@@ -3,7 +3,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import style from './style.module.css';
 import { API_URL } from '../../../helper/env';
@@ -15,18 +14,18 @@ import Cookies from 'js-cookie';
 
 function index({ data }) {
    const id_recipe = data;
+   const id_user = Cookies.get('user');
    const router = useRouter();
    const input = useRef(null);
    const [loading, setLoading] = useState(false);
-   const id_user = Cookies.get('user');
    const [text, setText] = useState('');
    const [comment, setComment] = useState([]);
 
    useEffect(() => {
-      datas();
+      getComment();
    }, [id_recipe]);
 
-   const datas = () => {
+   const getComment = () => {
       setLoading(true);
       axios
          .get(`comment/recipe/${id_recipe}`)

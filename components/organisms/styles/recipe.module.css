@@ -2,7 +2,9 @@
    background-color: var(--mainColor);
    border: 1px solid var(--mainColor);
    height: 100vh;
-   width: 480px;
+   width: 450px;
+      overflow: hidden;
+      box-shadow: 0px 0px 5px 0px var(--secondColor);
 }
 
 .section span {
@@ -35,7 +37,7 @@
 }
 
 .back {
-   margin-top: 33px;
+   margin-top: 20px;
    margin-left: 20px;
    background-color: var(--color-1);
    border-radius: 20px;
@@ -50,8 +52,9 @@
 .section h2 {
    text-transform: capitalize;
    color: var(--secondColor);
-   margin-top: 27px;
+   margin-top: 17px;
    margin-left: 50px !important;
+   margin-bottom: 30px;
 }
 
 .images {
@@ -108,6 +111,6 @@
 
 @media (min-width: 765px) {
    .section {
-      height: 100%;
+      height: 100vh;
    }
 }

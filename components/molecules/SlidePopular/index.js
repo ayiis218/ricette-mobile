@@ -1,10 +1,13 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 import { API_URL } from '../../../helper/env';
 import style from './style.module.css';
+import { useRouter } from 'next/router';
 
 function index({ data }) {
+   const router = useRouter();
    return (
       <div className={style.section}>
          <div className="container">
@@ -40,12 +43,15 @@ function index({ data }) {
                                  </div>
                               </div>
                               <div className="col-9">
-                                 <div className={style.title}>
-                                    <Link
-                                       href={`/recipe/detail/${item.id_recipe}`}
-                                    >
-                                       <h5>{item.name_recipe}</h5>
-                                    </Link>
+                                 <div
+                                    className={style.title}
+                                    onClick={() =>
+                                       router.push(
+                                          `/recipe/detail/${item.id_recipe}`
+                                       )
+                                    }
+                                 >
+                                    <h5>{item.name_recipe}</h5>
                                     <span>{item.name}</span>
                                     <div className="d-flex gap-1 align-items-center">
                                        <img

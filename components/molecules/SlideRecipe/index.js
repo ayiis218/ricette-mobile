@@ -1,7 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Link from 'next/link';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { API_URL } from '../../../helper/env';
@@ -10,10 +10,12 @@ import Default from '../../../public/img/original.jpg';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import style from './style.module.css';
+import { useRouter } from 'next/router';
 
 function index({ data }) {
-   const file = data.map((item, index) => item.images);
-   console.log(file);
+   const router = useRouter();
+   // const file = data.map((item, index) => item.images);
+   // console.log(file);
    return (
       <div className={style.section}>
          <div className="container">
@@ -39,14 +41,17 @@ function index({ data }) {
                      <SwiperSlide key={index}>
                         <div className={style.card}>
                            <div className={style.image}>
-                              <div className="col-12 col-lg-12">
-                                 <Link
-                                    href={`/recipe/detail/${item.id_recipe}`}
-                                 >
-                                    <h5 className={style.label}>
-                                       {item.name_recipe}
-                                    </h5>
-                                 </Link>
+                              <div
+                                 className="col-12 col-lg-12"
+                                 onClick={() =>
+                                    router.push(
+                                       `/recipe/detail/${item.id_recipe}`
+                                    )
+                                 }
+                              >
+                                 <h5 className={style.label}>
+                                    {item.name_recipe}
+                                 </h5>
                                  <img
                                     src={`${
                                        item.images
@@ -54,7 +59,7 @@ function index({ data }) {
                                           : `${API_URL}picture/recipe/original.jpg`
                                     }`}
                                     alt={item.name_recipe}
-                                    height={140}
+                                    height={150}
                                     width={140}
                                     onError={(e) => {
                                        e.target.src = Default;

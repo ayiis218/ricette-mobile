@@ -16,7 +16,6 @@ import style from './styles/login.module.css';
 const FormLogin = () => {
    const router = useRouter();
    const [loading, setLoading] = useState(false);
-
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
 
