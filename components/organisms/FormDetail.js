@@ -48,8 +48,6 @@ const FormDetail = ({ data }) => {
                               : `${API_URL}picture/recipe/original.jpg`
                         }`}
                         alt={item.images}
-                        height={360}
-                        width={437}
                      />
                   </div>
                </div>

@@ -69,17 +69,20 @@ function index({ data }) {
          <div className="col-12 col-lg-12">
             <div className={style.content}>
                <form onSubmit={handleSubmit}>
-                  <textarea
-                     className="form-control px-2 py-2"
-                     placeholder="Comment :"
-                     style={{
-                        border: 'none',
-                        outline: 'none',
-                        boxShadow: 'none',
-                     }}
-                     ref={input}
-                     onChange={(e) => setText(e.target.value)}
-                  />
+                  <div className="d-flex justify-content-center">
+                     <textarea
+                        className="form-control px-2 py-2"
+                        placeholder="Comment :"
+                        style={{
+                           border: 'none',
+                           outline: 'none',
+                           boxShadow: 'none',
+                        }}
+                        ref={input}
+                        onChange={(e) => setText(e.target.value)}
+                     />
+                  </div>
+
                   <div className="d-flex justify-content-center">
                      {loading ? (
                         <button disabled>
