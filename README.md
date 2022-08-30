@@ -63,9 +63,9 @@ NEXT_PUBLIC_API_URL= [API_URL]
 <td><h4 style="margin-buttom:8px"></h4></td>
 </tr>
 <tr>
-<td><image src="https://i.postimg.cc/FHLGsLYq/mobile-36.png" alt="register" width=250></td>
-<td><image src="https://i.postimg.cc/d1q9BN5P/mobile-35.png" alt="login" width=250/></td>
-<td><image src="https://i.postimg.cc/q7cL2HXx/mobile-37.png" alt="Search" width=250/></td>
+<td><image src="https://i.postimg.cc/FHLGsLYq/mobile-36.png" alt="" width=250></td>
+<td><image src="https://i.postimg.cc/d1q9BN5P/mobile-35.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/q7cL2HXx/mobile-37.png" alt="" width=250/></td>
 <td></td>
 </tr>
 <tr>
@@ -75,20 +75,20 @@ NEXT_PUBLIC_API_URL= [API_URL]
 <td><h4 style="margin-buttom:8px">Detail Recipe</h4></td>
 </tr>
 <tr>
-<td><image src="https://i.postimg.cc/fWqvcKXp/mobile-33.png" alt="register" width=250></td>
-<td><image src="https://i.postimg.cc/NfW7Vjdx/mobile-32.png" alt="login" width=250/></td>
-<td><image src="https://i.postimg.cc/nrrG8j83/mobile-34.png" alt="Search" width=250/></td>
-<td><image src="https://i.postimg.cc/sDB4wh4X/mobile-31.png" alt="Home" width=250/></td>
+<td><image src="https://i.postimg.cc/fWqvcKXp/mobile-33.png" alt="" width=250></td>
+<td><image src="https://i.postimg.cc/NfW7Vjdx/mobile-32.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/nrrG8j83/mobile-34.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/sDB4wh4X/mobile-31.png" alt="" width=250/></td>
 </tr>
 <tr>
 <td><h4 style="margin-buttom:8px">Profile</h4></td>
 <td colspan="3"><h4 style="margin-buttom:8px">Edit Profile</h4></td>
 </tr>
 <tr>
-<td><image src="https://i.postimg.cc/dtX4YBVr/mobile-38.png" alt="Flight Result" width=250/></td>
-<td><image src="https://i.postimg.cc/t40v4v35/mobile-45.png" alt="Flight Detail" width=250/></td>
-<td><image src="https://i.postimg.cc/Gmk78Pz1/mobile-46.png" alt="Search" width=250/></td>
-<td><image src="https://i.postimg.cc/Jh52g3BQ/mobile-47.png" alt="Booking Detail" width=250/></td>
+<td><image src="https://i.postimg.cc/dtX4YBVr/mobile-38.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/t40v4v35/mobile-45.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/Gmk78Pz1/mobile-46.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/Jh52g3BQ/mobile-47.png" alt="" width=250/></td>
 </tr>
 <tr>
 <td><h4 style="margin-buttom:8px">My Recipe</h4></td>
@@ -97,10 +97,10 @@ NEXT_PUBLIC_API_URL= [API_URL]
 <td><h4 style="margin-buttom:8px">Comment Recipe</h4></td>
 </tr>
 <tr>
-<td><image src="https://i.postimg.cc/KzCdbGJG/mobile-49.png" alt="Flight Result" width=250/></td>
-<td><image src="https://i.postimg.cc/05VVtxgt/mobile-41.png" alt="Flight Detail" width=250/></td>
-<td><image src="https://i.postimg.cc/rpkHQZzm/mobile-48.png" alt="Search" width=250/></td>
-<td><image src="https://i.postimg.cc/ydXR9HNV/mobile-52.png" alt="Booking Detail" width=250/></td>
+<td><image src="https://i.postimg.cc/KzCdbGJG/mobile-49.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/05VVtxgt/mobile-41.png" alt=" Detail" width=250/></td>
+<td><image src="https://i.postimg.cc/rpkHQZzm/mobile-48.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/ydXR9HNV/mobile-52.png" alt="" width=250/></td>
 </tr>
 </table>
 
