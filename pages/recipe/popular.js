@@ -9,7 +9,7 @@ import MainLayout from '../../layouts/MainLayout';
 export async function getStaticProps() {
    const popularRecipe = await axios({
       method: 'GET',
-      url: `${API_URL}recipe`,
+      url: `${API_URL}recipe/all`,
    });
    return {
       props: {

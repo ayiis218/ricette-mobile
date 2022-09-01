@@ -14,8 +14,6 @@ import { useRouter } from 'next/router';
 
 function index({ data }) {
    const router = useRouter();
-   // const file = data.map((item, index) => item.images);
-   // console.log(file);
    return (
       <div className={style.section}>
          <div className="container">
