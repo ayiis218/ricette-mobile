@@ -3,14 +3,12 @@
 /* eslint-disable no-unused-vars */
 import Head from 'next/head';
 import React from 'react';
-import axios from 'axios';
-import jwtDecode from 'jwt-decode';
 
 import { API_URL } from '../../helper/env';
 import FormProfile from '../../components/organisms/FormProfile';
 import MainLayout from '../../layouts/MainLayout';
 
-export async function getServerSideProps(context) {
+/* export async function getServerSideProps(context) {
    try {
       const decoded = jwtDecode(context?.req?.cookies?.token);
       const response = await axios.get(`${API_URL}users/${decoded.id_users}`, {
@@ -21,7 +19,7 @@ export async function getServerSideProps(context) {
 
       return {
          props: {
-            data: response.data.data,
+            data: response?.data?.data,
             error: false,
             message: 'Success get data',
          },
@@ -29,15 +27,15 @@ export async function getServerSideProps(context) {
    } catch (error) {
       return {
          props: {
-            data: null,
+            data: response?.data.data,
             error: true,
             message: error.message,
          },
       };
    }
-}
+} */
 
-function profile({ data }) {
+function profile() {
    return (
       <div>
          <Head>
@@ -46,7 +44,7 @@ function profile({ data }) {
             <link rel="icon" href="/icon.png" />
          </Head>
          <MainLayout>
-            <FormProfile data={data} />
+            <FormProfile />
          </MainLayout>
       </div>
    );

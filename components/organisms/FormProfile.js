@@ -1,20 +1,25 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import Image from 'next/image';
 import Link from 'next/link';
 import alert from 'sweetalert2';
+import axios from '../../helper/axios';
+import Loading from 'react-content-loader';
 import { useRouter } from 'next/router';
 import { API_URL } from '../../helper/env';
 
 import { IoIosLogOut } from 'react-icons/io';
 import style from './styles/profile.module.css';
 
-const FormDetail = ({ data }) => {
+const FormDetail = () => {
    const token = Cookies.get('token');
+   const id_user = Cookies.get('user');
    const router = useRouter();
+   const [data, setData] = useState([]);
+   const [loading, setLoading] = useState(false);
 
    useEffect(() => {
       if (!token) {
@@ -25,7 +30,23 @@ const FormDetail = ({ data }) => {
          });
          router.push('/auth/login');
       }
+      getUser;
    }, [token]);
+
+   const getUser = () => {
+      setLoading(true);
+
+      axios
+         .get(`users/${id_user}`)
+         .then((res) => {
+            setData(res?.data?.data);
+            setLoading(false);
+         })
+         .catch((err) => {
+            console.log(err?.response?.data?.message);
+            setLoading(false);
+         });
+   };
 
    const HandleLogout = () => {
       Cookies.remove('token');
@@ -43,34 +64,38 @@ const FormDetail = ({ data }) => {
          <div className={style.hero}>
             <div className={style.profile}>
                <div className="row w-100">
-                  {data.map((item) => (
-                     <>
-                        <div className="col-12 col-lg-12 d-flex justify-content-end">
-                           <IoIosLogOut
-                              size={30}
-                              color="#F5F5F5"
-                              onClick={HandleLogout}
-                           />
-                        </div>
-                        <div className="col-12 col-lg-12 d-flex justify-content-center">
-                           <div className={style.title}>
-                              <img
-                                 src={`${
-                                    item.photo
-                                       ? `${API_URL}${item.photo}`
-                                       : `${API_URL}picture/user/chef.jpg`
-                                 }`}
-                                 alt={item.photo}
-                                 width={120}
-                                 height={120}
+                  {loading ? (
+                     <Loading />
+                  ) : (
+                     data.map((item) => (
+                        <>
+                           <div className="col-12 col-lg-12 d-flex justify-content-end">
+                              <IoIosLogOut
+                                 size={30}
+                                 color="#F5F5F5"
+                                 onClick={HandleLogout}
                               />
                            </div>
-                        </div>
-                        <div className="col-12 col-lg-12 d-flex justify-content-center">
-                           <h5>{item.name}</h5>
-                        </div>
-                     </>
-                  ))}
+                           <div className="col-12 col-lg-12 d-flex justify-content-center">
+                              <div className={style.title}>
+                                 <img
+                                    src={`${
+                                       item.photo
+                                          ? `${API_URL}${item.photo}`
+                                          : `${API_URL}picture/user/chef.jpg`
+                                    }`}
+                                    alt={item.photo}
+                                    width={120}
+                                    height={120}
+                                 />
+                              </div>
+                           </div>
+                           <div className="col-12 col-lg-12 d-flex justify-content-center">
+                              <h5>{item.name}</h5>
+                           </div>
+                        </>
+                     ))
+                  )}
                   <div className="col-12 col-lg-12 m-0 align-self-center d-flex align-items-center d-flex justify-content-center">
                      <div className={style.content}>
                         <div
