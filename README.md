@@ -26,12 +26,18 @@ This app was built with some technologies below:
 - [Material-ui](https://mui.com/)
 
 ## Installation
+
 - Clone my repositories
 ```
 git clone https://github.com/ayiis218/ricette-mobile.git
 ```
-- Install Module
 
+- Go to
+```
+cd ricette-mobile
+```
+
+- Install Module
 ```
 npm install
 ```
