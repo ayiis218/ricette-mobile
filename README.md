@@ -10,7 +10,7 @@
   </br>
    <a href="https://ricette-mobile.vercel.app/">View Demo</a>
   <h2>About The Project</h2>
-  Riette dellApp is an application website for finding a recipe tutorial. In addition, users can also access the application website to share tutorial recipes by registering as a user in the application. This web application was developed using react js  
+  Riette mobile is Ricette dellApp mobile version. Ricette mobile an application website for finding a recipe tutorial. In addition, users can also access the application website to share tutorial recipes by registering as a user in the application. This web application was developed using Next js  
 </div>
 
 ## Built With
