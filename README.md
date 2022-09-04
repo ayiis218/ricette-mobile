@@ -1,25 +1,19 @@
-# Ricette-mobile
+
 <!-- PROJECT LOGO -->
 
 <div align="center">
 
 <img src="https://i.postimg.cc/yx8pCmKW/icon.png" align="center" width="250" height="auto" />
-
+  <h1>Ricette dellApp</h1>
+  
+  [![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
+  </br>
+   <a href="https://ricette-dellapp-pjayedd8t-ayiis218.vercel.app/">View Demo</a>
+  <h2>About The Project</h2>
+  Riette dellApp is an application website for finding a recipe tutorial. In addition, users can also access the application website to share tutorial recipes by registering as a user in the application. This web application was developed using react js  
 </div>
 
-<div align="center">
-
-<br />
-
-[![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
-
-</div>
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-Ricette Mobile is a Ricette dellApp mobile aplication to search for recipes and share a recipe with the public
-
-### Built With
+## Built With
 This app was built with some technologies below:
 - [Node.js](https://nodejs.org/en/)
 - [Next.js](https://nextjs.org/)
@@ -31,7 +25,7 @@ This app was built with some technologies below:
 - [Swiper](https://swiperjs.com/react)
 - [Material-ui](https://mui.com/)
 
-### Installation
+## Installation
 - Clone my repositories
 ```
 git clone https://github.com/ayiis218/ricette-mobile.git
@@ -42,7 +36,7 @@ git clone https://github.com/ayiis218/ricette-mobile.git
 npm install
 ```
 
-### ENV Example
+## ENV Example
 
 ```
 NEXT_PUBLIC_APP_NAME= [APP_NAME]
@@ -104,11 +98,19 @@ NEXT_PUBLIC_API_URL= [API_URL]
 </tr>
 </table>
 
+## Related Project
+:rocket: [`Backend ricette-dellApp`](https://github.com/ayiis218/ricette-dellApp-backend.git)
+
+:rocket: [`Frontend ricette-dellApp`](https://github.com/ayiis218/ricette-mobile)
+
+:rocket: [`Web Service`](https://ricette-dellapp.herokuapp.com/)
+
 ## Contact
 
 email : ayiis.218@gmail.com
 
-github Link: https://github.com/ayiis218
+project Link: https://github.com/ayiis218/ricette-dellApp.git
 
 ## License
 Distributed under the [MIT](/LICENSE) License.
+<p align="right">(<a href="#top">back to top</a>)</p>
