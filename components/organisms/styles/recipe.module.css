@@ -1,9 +1,8 @@
 .section {
    background-color: var(--mainColor);
    border: 1px solid var(--mainColor);
-   height: 100vh;
-   width: 450px;
-      overflow: hidden;
+   height: 1020px;
+      width: 480px;
       box-shadow: 0px 0px 5px 0px var(--secondColor);
 }
 
@@ -13,7 +12,7 @@
    border-radius: 60px;
    height: 50px;
    margin-top: 20px;
-   width: 350px;
+   width: 100%;
    margin-left: 20px;
    margin-right: 20px;
 }
@@ -111,6 +110,7 @@
 
 @media (min-width: 765px) {
    .section {
-      height: 100vh;
+      width: 440px;
+         height: 130vh;
    }
 }

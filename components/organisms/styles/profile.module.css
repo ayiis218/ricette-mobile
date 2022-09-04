@@ -56,5 +56,6 @@
    .section {
       width: 440px;
       height: 100vh;
+      overflow: hidden;
    }
 }

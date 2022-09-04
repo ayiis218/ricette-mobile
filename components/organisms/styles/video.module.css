@@ -1,0 +1,25 @@
+.section {
+   background-color: var(--mainColor);
+   border: 1px solid var(--mainColor);
+   height: 1020px;
+   width: 480px;
+   overflow: hidden;
+   box-shadow: 0px 0px 5px 0px var(--secondColor);
+}
+
+.video iframe {
+   object-fit: cover;
+   width: 450px;
+}
+
+@media (min-width: 765px) {
+   .section {
+      width: 440px;
+      height: 130vh;
+   }
+
+   .video iframe {
+      object-fit: cover;
+      width: 450px;
+   }
+}

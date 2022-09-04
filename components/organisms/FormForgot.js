@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Image from 'next/image';
-
+import Link from 'next/link';
 import InputText from '../atoms/InputText';
 import Button from '../atoms/Button';
 
 import { FiUser } from 'react-icons/fi';
-import style from './styles/forget.module.css';
+import style from './styles/forgot.module.css';
 
 const FormForgot = (props) => {
    return (
@@ -17,7 +17,7 @@ const FormForgot = (props) => {
                   <div className={style.left}>
                      <span>
                         <Image
-                           src="/img/user.png"
+                           src="/img/chef.jpg"
                            width={200}
                            height={200}
                            alt="user"
@@ -52,6 +52,10 @@ const FormForgot = (props) => {
                                  Reset Password
                               </Button>
                            </div>
+                        </div>
+                        <div div className={style.option}>
+                           Back to Login?{' '}
+                           <Link href="/auth/login">in Here</Link>
                         </div>
                      </form>
                   </div>

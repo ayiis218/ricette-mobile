@@ -3,13 +3,16 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import alert from 'sweetalert2';
-import InputText from '../../../components/atoms/InputText';
-import Button from '../../../components/atoms/Button';
-import { AiOutlineLock, AiOutlineUnlock } from 'react-icons/ai';
-import style from '../../../styles/picture.module.css';
-import axios from '../../../helper/axios';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { AiOutlineLock, AiOutlineUnlock } from 'react-icons/ai';
+import axios from '../../../helper/axios';
+
+import InputText from '../../../components/atoms/InputText';
+import Button from '../../../components/atoms/Button';
+
+import style from '../../../styles/picture.module.css';
 
 const changePicture = () => {
    const id = Cookies.get('user');
@@ -66,28 +69,24 @@ const changePicture = () => {
       <div className={style.section}>
          <div className="container">
             <div className="row">
-               <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
+               <div className="col-md-6 col-lg-12 d-flex justify-content-center">
                   <div className={style.left}>
                      <span>
                         <Image
                            src="/img/chef.jpg"
-                           width={200}
-                           height={200}
+                           width={150}
+                           height={150}
                            alt="user"
                         />
                      </span>
                   </div>
                </div>
-               <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
+               <div className="col-md-6 col-lg-12 d-flex justify-content-center">
                   <div className={style.right}>
                      <h4>Change Picture</h4>
                      <form onSubmit={handleSubmit}>
                         <div className="input-group mb-3">
                            <span className="input-group-text" id="basic-addon1">
-                              {/* <AiOutlinePicture
-                                 color="var(--color-3)"
-                                 size={30}
-                              /> */}
                               <InputText
                                  type="file"
                                  placeholder="Password"
@@ -130,7 +129,7 @@ const changePicture = () => {
                            </span>
                         </div>
                         <div className="row">
-                           <div className="col d-flex justify-content-center">
+                           <div className="col-12 d-flex justify-content-center">
                               <Button
                                  className={`btn w-100 mt-3 ${style.button}`}
                                  type="submit"
@@ -141,6 +140,14 @@ const changePicture = () => {
                            </div>
                         </div>
                      </form>
+                     <div className="w-100 d-flex flex-column">
+                        <div className="w-100 d-flex justify-content-center">
+                           <div div className={style.option}>
+                              Back to profile?{' '}
+                              <Link href="/users/profile">in hire</Link>
+                           </div>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>

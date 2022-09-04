@@ -44,19 +44,17 @@ function popular() {
                </div>
             </div>
             <div className={style.profile}>
-               <div className="row">
-                  <div className="d-grid">
-                     <div className={`btn-group-vertical ${style.photo}`}>
-                        <button type="button" className="btn">
-                           Photo Library
-                        </button>
-                        <button type="button" className="btn">
-                           Take Photo
-                        </button>
-                     </div>
+               <div className="row d-flex justify-content-center">
+                  <div className={`btn-group-vertical ${style.photo}`}>
+                     <button type="button" className="btn">
+                        Photo Library
+                     </button>
+                     <button type="button" className="btn">
+                        Take Photo
+                     </button>
                   </div>
                </div>
-               <div className="row mt-2">
+               <div className="row mt-2 d-flex justify-content-center">
                   <div className={`d-grid ${style.cancel}`}>
                      <button
                         type="button"

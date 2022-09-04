@@ -4,11 +4,12 @@
 import Head from 'next/head';
 import axios from 'axios';
 import alert from 'sweetalert2';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
 import { API_URL } from '../../../helper/env';
 import FormSearch from '../../../components/organisms/FormSearch';
 import MainLayout from '../../../layouts/MainLayout';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 
 export async function getServerSideProps(context) {
    try {

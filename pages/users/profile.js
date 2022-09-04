@@ -1,39 +1,7 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import Head from 'next/head';
 import React from 'react';
-
-import { API_URL } from '../../helper/env';
 import FormProfile from '../../components/organisms/FormProfile';
 import MainLayout from '../../layouts/MainLayout';
-
-/* export async function getServerSideProps(context) {
-   try {
-      const decoded = jwtDecode(context?.req?.cookies?.token);
-      const response = await axios.get(`${API_URL}users/${decoded.id_users}`, {
-         headers: {
-            Authorization: `Bearer ${context?.req?.cookies?.token}`,
-         },
-      });
-
-      return {
-         props: {
-            data: response?.data?.data,
-            error: false,
-            message: 'Success get data',
-         },
-      };
-   } catch (error) {
-      return {
-         props: {
-            data: response?.data.data,
-            error: true,
-            message: error.message,
-         },
-      };
-   }
-} */
 
 function profile() {
    return (

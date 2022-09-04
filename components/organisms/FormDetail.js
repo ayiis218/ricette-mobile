@@ -14,8 +14,10 @@ import { FiPlay } from 'react-icons/fi';
 import { BiLike, BiArrowBack } from 'react-icons/bi';
 import { IoBookmarkOutline } from 'react-icons/io5';
 import style from './styles/detail.module.css';
+import { useRouter } from 'next/router';
 
 const FormDetail = ({ data }) => {
+   const router = useRouter();
    const [value, setValue] = useState('1');
 
    const handleChange = (event, newValue) => {
@@ -73,16 +75,21 @@ const FormDetail = ({ data }) => {
                            </TabPanel>
                            <TabPanel value="2" label="Video Step">
                               <div className={style.videos}>
-                                 <div className="row">
+                                 <div
+                                    className="row"
+                                    onClick={() =>
+                                       router.push(
+                                          `/recipe/video/${item.id_recipe}`
+                                       )
+                                    }
+                                 >
                                     <div className="col-4">
                                        <div className={style.button}>
                                           <FiPlay size={30} color="#ffffff" />
                                        </div>
                                     </div>
                                     <div className="col-8">
-                                       <Link href={`/video/${item.video}`}>
-                                          <h4>Step 1</h4>
-                                       </Link>
+                                       <h4 className="mt-2">video tutorial</h4>
                                     </div>
                                  </div>
                               </div>

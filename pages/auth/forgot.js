@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import FormForgot from '../../components/organisms/FormForget';
+import FormForgot from '../../components/organisms/FormForgot';
 
 function forgot() {
    return (

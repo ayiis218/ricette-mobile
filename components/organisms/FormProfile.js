@@ -30,12 +30,14 @@ const FormDetail = () => {
          });
          router.push('/auth/login');
       }
-      getUser;
    }, [token]);
+
+   useEffect(() => {
+      getUser();
+   }, [id_user]);
 
    const getUser = () => {
       setLoading(true);
-
       axios
          .get(`users/${id_user}`)
          .then((res) => {
@@ -43,6 +45,7 @@ const FormDetail = () => {
             setLoading(false);
          })
          .catch((err) => {
+            err?.response;
             console.log(err?.response?.data?.message);
             setLoading(false);
          });

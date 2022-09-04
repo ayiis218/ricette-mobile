@@ -87,7 +87,7 @@ const FormLogin = () => {
                   <div className={style.left}>
                      <span>
                         <Image
-                           src="/img/user.png"
+                           src="/img/chef.jpg"
                            width={200}
                            height={200}
                            alt="user"
@@ -148,7 +148,7 @@ const FormLogin = () => {
                      <div className="w-100 d-flex flex-column">
                         <div className="w-100 d-flex justify-content-center align-items-center">
                            <div div className={style.option}>
-                              Don&apos;t have an account?
+                              Don&apos;t have an account?{' '}
                               <Link href="/auth/register">Sign up</Link>
                            </div>
                         </div>
