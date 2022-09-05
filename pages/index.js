@@ -23,6 +23,7 @@ export async function getStaticProps() {
             dataNew: newRecipe?.data?.data,
             dataPopular: popularRecipe?.data?.data,
          },
+         revalidate: 10,
       };
    } catch (err) {
       return {
@@ -30,6 +31,7 @@ export async function getStaticProps() {
             dataNew: err.message,
             dataPopular: err.message,
          },
+         revalidate: 10,
       };
    }
 }
