@@ -1,10 +1,8 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import Link from 'next/link';
 import Image from 'next/image';
 import style from '../../styles/navbar.module.css';
 import { useRouter } from 'next/router';
 
-function navbar() {
+function Navbar() {
    const router = useRouter();
    return (
       <div className={style.section}>
@@ -21,9 +19,13 @@ function navbar() {
                   borderRadius: '20px',
                }}
             >
-               <Link href="/" className="navbar-brand">
-                  <Image src="/icons/home.svg" alt="" width={40} height={25} />
-               </Link>
+               <Image
+                  src="/icons/home.svg"
+                  alt=""
+                  width={40}
+                  height={25}
+                  onClick={() => router.push('/')}
+               />
             </div>
             <div
                style={{
@@ -35,14 +37,13 @@ function navbar() {
                   borderRadius: '20px',
                }}
             >
-               <Link href="/recipe/create" className="navbar-brand">
-                  <Image
-                     src="/icons/plus-square.svg"
-                     alt=""
-                     width={40}
-                     height={25}
-                  />
-               </Link>
+               <Image
+                  src="/icons/plus-square.svg"
+                  alt=""
+                  width={40}
+                  height={25}
+                  onClick={() => router.push('/recipe/create')}
+               />
             </div>
             <div
                style={{
@@ -54,14 +55,13 @@ function navbar() {
                   borderRadius: '20px',
                }}
             >
-               <Link href="/chat" className="navbar-brand">
-                  <Image
-                     src="/icons/message-circle.svg"
-                     alt=""
-                     width={40}
-                     height={25}
-                  />
-               </Link>
+               <Image
+                  src="/icons/message-circle.svg"
+                  alt=""
+                  width={40}
+                  height={25}
+                  onClick={() => router.push('/chat')}
+               />
             </div>
             <div
                style={{
@@ -73,13 +73,17 @@ function navbar() {
                   borderRadius: '20px',
                }}
             >
-               <Link href="/users/profile" className="navbar-brand">
-                  <Image src="/icons/user.svg" alt="" width={40} height={25} />
-               </Link>
+               <Image
+                  src="/icons/user.svg"
+                  alt=""
+                  width={40}
+                  height={25}
+                  onClick={() => router.push('/users/profile')}
+               />
             </div>
          </div>
       </div>
    );
 }
 
-export default navbar;
+export default Navbar;

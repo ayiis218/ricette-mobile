@@ -46,6 +46,7 @@ const InputText = forwardRef(
                   ref={ref}
                   max={max}
                   multiple={multiple}
+                  required
                />
                {append && (
                   <div className="input-group-append">

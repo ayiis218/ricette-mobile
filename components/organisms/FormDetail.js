@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/jsx-key */
-/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import Loading from 'react-content-loader';
 import Link from 'next/link';
 import { Box, Tab } from '@mui/material';
 import { TabList, TabPanel, TabContext } from '@mui/lab';
+import { useSelector, useDispatch } from 'react-redux';
+import { getDetailRecipe } from '../../redux/action/recipe';
 
 import Comment from '../molecules/SlideComment';
 import { API_URL } from '../../helper/env';
@@ -16,9 +17,19 @@ import { IoBookmarkOutline } from 'react-icons/io5';
 import style from './styles/detail.module.css';
 import { useRouter } from 'next/router';
 
-const FormDetail = ({ data }) => {
+const FormDetail = (id) => {
+   const id_recipe = id?.id;
+   const [loading, setLoading] = useState(true);
    const router = useRouter();
+   const dispatch = useDispatch();
+   const { detailRecipe } = useSelector((state) => state);
+   const recipe = detailRecipe?.data[0];
    const [value, setValue] = useState('1');
+
+   useEffect(() => {
+      setLoading(false);
+      dispatch(getDetailRecipe(id_recipe));
+   }, []);
 
    const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -32,30 +43,30 @@ const FormDetail = ({ data }) => {
                   <BiArrowBack size={30} color="#F5F5F5" />
                </Link>
             </div>
-            {data.map((item, index) => (
-               <div className={style.image}>
-                  <div className="col-12 col-lg-12">
-                     <h1>{item.name_recipe}</h1>
-                     <h6>By. {item.name}</h6>
-                     <button type="button" className={style.save}>
-                        <IoBookmarkOutline size={20} />
-                     </button>
-                     <button type="button" className={style.like}>
-                        <BiLike size={20} />
-                     </button>
-                     <img
-                        src={`${
-                           item.images
-                              ? `${API_URL}${item.images}`
-                              : `${API_URL}picture/recipe/original.jpg`
-                        }`}
-                        alt={item.images}
-                     />
-                  </div>
-               </div>
-            ))}
-            {data.map((item, index) => (
+            {loading ? (
+               <Loading />
+            ) : (
                <>
+                  <div className={style.image}>
+                     <div className="col-12 col-lg-12">
+                        <h1>{recipe.name_recipe}</h1>
+                        <h6>By. {recipe.name}</h6>
+                        <button type="button" className={style.save}>
+                           <IoBookmarkOutline size={20} />
+                        </button>
+                        <button type="button" className={style.like}>
+                           <BiLike size={20} />
+                        </button>
+                        <img
+                           src={`${
+                              recipe.images
+                                 ? `${API_URL}${recipe.images}`
+                                 : `${API_URL}picture/recipe/original.jpg`
+                           }`}
+                           alt={recipe.images}
+                        />
+                     </div>
+                  </div>
                   <div className={style.content}>
                      <Box sx={{ width: '100%', typography: 'body1' }}>
                         <TabContext value={value}>
@@ -71,7 +82,7 @@ const FormDetail = ({ data }) => {
                               </TabList>
                            </Box>
                            <TabPanel value="1" label="Ingredients">
-                              {item.ingredients}
+                              {recipe.ingredients}
                            </TabPanel>
                            <TabPanel value="2" label="Video Step">
                               <div className={style.videos}>
@@ -79,7 +90,7 @@ const FormDetail = ({ data }) => {
                                     className="row"
                                     onClick={() =>
                                        router.push(
-                                          `/recipe/video/${item.id_recipe}`
+                                          `/recipe/video/${recipe.id_recipe}`
                                        )
                                     }
                                  >
@@ -98,10 +109,10 @@ const FormDetail = ({ data }) => {
                      </Box>
                   </div>
                   <div className={style.Comment}>
-                     <Comment data={item.id_recipe} />
+                     <Comment data={recipe.id_recipe} />
                   </div>
                </>
-            ))}
+            )}
          </div>
       </div>
    );

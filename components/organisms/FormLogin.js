@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import alert from 'sweetalert2';
 import { useRouter } from 'next/router';
 import { toastr } from '../../helper/toastr';
-import axios from '../../helper/axios';
+import { login } from '../../redux/action/auth';
 import InputText from '../atoms/InputText';
 import Button from '../atoms/Button';
 
@@ -30,12 +30,11 @@ const FormLogin = () => {
          });
       } else {
          setLoading(true);
-         axios
-            .post('login', { email, password })
+         login({ email, password })
             .then((res) => {
-               Cookies.set('token', res?.data?.token);
-               Cookies.set('user', res?.data?.user);
-               const tkn = res?.data?.token;
+               Cookies.set('token', res?.token);
+               Cookies.set('user', res?.user);
+               const tkn = res?.token;
                if (tkn == undefined) {
                   alert.fire({
                      title: 'Failed!',

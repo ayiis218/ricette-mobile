@@ -1,23 +1,12 @@
 import Head from 'next/head';
-import axios from 'axios';
-import { API_URL } from '../../../helper/env';
+import { useRouter } from 'next/router';
 import FormDetailRecipe from '../../../components/organisms/FormDetail';
 import MainLayout from '../../../layouts/MainLayout';
 
-export async function getServerSideProps(context) {
-   const { id } = context.query;
-   const response = await axios({
-      method: 'GET',
-      url: `${API_URL}recipe/${id}`,
-   });
-   return {
-      props: {
-         data: response?.data?.data,
-      },
-   };
-}
+function DetailRecipe() {
+   const route = useRouter();
+   const id_recipe = route?.query?.id;
 
-function detailRecipe({ data }) {
    return (
       <div>
          <Head>
@@ -26,10 +15,10 @@ function detailRecipe({ data }) {
             <link rel="icon" href="/icon.png" />
          </Head>
          <MainLayout>
-            <FormDetailRecipe data={data} />
+            <FormDetailRecipe id={id_recipe} />
          </MainLayout>
       </div>
    );
 }
 
-export default detailRecipe;
+export default DetailRecipe;

@@ -1,14 +1,10 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import alert from 'sweetalert2';
 import { useRouter } from 'next/router';
-
-// import { API_URL } from '../../helper/env';
+import { register } from '../../redux/action/auth';
 import { toastr } from '../../helper/toastr';
-import axios from '../../helper/axios';
 import InputText from '../atoms/InputText';
 import Button from '../atoms/Button';
 
@@ -45,14 +41,13 @@ const FormRegister = () => {
          });
       } else {
          setLoading(true);
-         axios
-            .post('register', {
-               name,
-               email,
-               phone,
-               password,
-               repass,
-            })
+         register({
+            name,
+            email,
+            phone,
+            password,
+            repass,
+         })
             .then((res) => {
                alert.fire({
                   title: 'Success!',
@@ -84,7 +79,7 @@ const FormRegister = () => {
             <div className="row">
                <div className="col-md-6 col-lg-12 m-0 d-flex align-items-center d-flex justify-content-center">
                   <div className={style.right}>
-                     <h4>Let's Get Started !</h4>
+                     <h4>Let&apos;s Get Started !</h4>
                      <p>Create new account to access all features.</p>
                      <form onSubmit={handleRegis}>
                         <div className="input-group mb-3">

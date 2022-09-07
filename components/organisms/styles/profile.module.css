@@ -36,7 +36,7 @@
    border-radius: 60px;
 }
 
-.profile h3 {
+.profile h5 {
    text-transform: capitalize;
    z-index: 2px;
 }

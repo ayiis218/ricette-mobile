@@ -4,6 +4,5 @@
   display: flex;
   justify-content: center;
   /* overflow: hidden; */
-  padding-bottom: 10vh;
   cursor: pointer;
 }
