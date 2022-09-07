@@ -15,15 +15,17 @@
 
 ## Built With
 This app was built with some technologies below:
-- [Node.js](https://nodejs.org/en/)
-- [Next.js](https://nextjs.org/)
-- [React.js](https://reactjs.com/)
+- [Node JS](https://nodejs.org/en/)
+- [Next JS](https://nextjs.org/)
+- [React JS](https://reactjs.com/)
+- [Redux](https://redux.js.org/)
 - [React-icons](https://react-icons.github.io/react-icons/)
 - [Boostrap](https://getbootstrap.com/)
 - [Axios](https://axios-http.com/docs/intro)
 - [Js-Cookie](https://www.npmjs.com/package/js-cookie)
 - [Swiper](https://swiperjs.com/react)
 - [Material-ui](https://mui.com/)
+- [Jest JS](https://jestjs.io/)
 
 ## Installation
 
