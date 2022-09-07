@@ -16,7 +16,7 @@ export async function getServerSideProps(context) {
       const { search } = context.query;
       const res = await axios({
          method: 'GET',
-         url: `${API_URL}search/${search}`,
+         url: `${API_URL}search?search=${search}&limit=5`,
       });
       return {
          props: {
