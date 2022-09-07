@@ -2,7 +2,7 @@ import Head from 'next/head';
 import axios from 'axios';
 import { API_URL } from '../helper/env';
 
-import style from '../styles/home.module.css';
+import style from '../styles/Home.module.css';
 import Search from '../components/molecules/Search';
 import Slider from '../components/molecules/SlideRecipe';
 import Popular from '../components/molecules/SlidePopular';
