@@ -3,8 +3,8 @@
 
 <div align="center">
 
-<img src="https://i.postimg.cc/yx8pCmKW/icon.png" align="center" width="250" height="auto" />
-  <h1>Ricette dellApp</h1>
+<img src="https://i.postimg.cc/W19McQLW/chef.jpg" align="center" width="250" height="auto" />
+  <h1>Ricette Mobile</h1>
   
   [![license](https://img.shields.io/github/license/dec0dOS/amazing-github-template.svg?style=flat-square)](LICENSE)
   </br>
@@ -66,8 +66,8 @@ NEXT_PUBLIC_API_URL= [API_URL]
 </tr>
 <tr>
 <td><image src="https://i.postimg.cc/FHLGsLYq/mobile-36.png" alt="" width=250></td>
-<td><image src="https://i.postimg.cc/d1q9BN5P/mobile-35.png" alt="" width=250/></td>
-<td><image src="https://i.postimg.cc/q7cL2HXx/mobile-37.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/xCN87Znz/mobile-4.png" alt="" width=250/></td>
+<td><image src="https://i.postimg.cc/nczgJfNg/mobile-6.png" alt="" width=250/></td>
 <td><image src="https://i.postimg.cc/dVMGTcnZ/mobile-65.png" alt="" width=250/></td>
 </tr>
 <tr>
